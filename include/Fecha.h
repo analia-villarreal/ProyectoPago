@@ -10,9 +10,12 @@ class Fecha
         int _anio;
     public:
         Fecha(int, int, int);
-        void setDia();
-        void setMes();
-        void setAnio();
+        void setDia(int);
+        void setMes(int);
+        void setAnio(int);
+        int getDia();
+        int getMes();
+        int getAnio();
 
 
 
