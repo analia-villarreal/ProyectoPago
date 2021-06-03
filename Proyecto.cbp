@@ -34,8 +34,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Comprobante.h" />
+		<Unit filename="include/Fecha.h" />
+		<Unit filename="include/Impuesto.h" />
+		<Unit filename="include/MediosDePagos.h" />
+		<Unit filename="include/OrdenDePago.h" />
+		<Unit filename="include/PlanDeCuentas.h" />
 		<Unit filename="include/Proveedor.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Comprobante.cpp" />
+		<Unit filename="src/Fecha.cpp" />
+		<Unit filename="src/Impuesto.cpp" />
+		<Unit filename="src/MediosDePagos.cpp" />
+		<Unit filename="src/OrdenDePago.cpp" />
+		<Unit filename="src/PlanDeCuentas.cpp" />
 		<Unit filename="src/Proveedor.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
