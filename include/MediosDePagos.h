@@ -4,12 +4,14 @@
 
 class MediosDePagos
 {
+    private:
+        int idMp;
+        char
     public:
         MediosDePagos();
 
-    protected:
 
-    private:
+
 };
 
 #endif // MEDIOSDEPAGOS_H
