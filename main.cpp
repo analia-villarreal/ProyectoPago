@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
+#include "Comprobante.h"
 
 using namespace std;
 
