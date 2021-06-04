@@ -1,4 +1,12 @@
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
 #include "Comprobante.h"
+#include "Fecha.h"
+#include "Impuesto.h"
+#include "PlanDeCuentas.h"
+
+using namespace std;
 
 Comprobante::Comprobante()
 {
