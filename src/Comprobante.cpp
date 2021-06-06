@@ -8,9 +8,11 @@
 
 using namespace std;
 
-Comprobante::Comprobante()
+Comprobante::Comprobante(int tipoComp)
 {
-    //ctor
+
+    _tipo=tipoComp;
+
 }
 
 void Comprobante::setIdComp(int idComp)
@@ -28,7 +30,6 @@ void Comprobante::setPv(int pv)
 
     if(pv<9999)
     {
-
         _pv=pv;
     }
 
@@ -116,6 +117,34 @@ bool Comprobante::getEstado()
 }
 void Comprobante::cargar()
 {
+
+      //  int _idComp;
+      //  char letra[1];
+      //  Fecha fechaContabilizacion;
+      //  Fecha fechaComp;
+      //  int _idProveedor;
+      //  int _pv;
+      //  int _numFac;
+      //  int _cuentaContable;
+      //  int _cantidad;
+      //  float _PU;
+      //  Impuesto IVA;
+      //  float _importeTotal;
+      //  bool _estado;
+
+<<"ESTA CARGANDO UNA"<< _tipo <<endl;
+
+cout<<"LETRA"<<endl;
+cout<<"FECHA CONTABILIZACIÓN"<<endl;
+cout<<"
+cout<<"
+cout<<"
+cout<<"
+cout<<"
+cout<<"
+cout<<"
+
+
 
 }
 void Comprobante::mostrar()

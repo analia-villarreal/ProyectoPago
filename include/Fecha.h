@@ -17,11 +17,6 @@ class Fecha
         int getMes();
         int getAnio();
 
-
-
-
-
-
 };
 
 #endif // FECHA_H

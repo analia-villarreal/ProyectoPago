@@ -20,6 +20,7 @@ class Comprobante
         bool _estado;
     public:
         Comprobante();
+        Comprobante(int);
         void setIdComp(int);
         void setLetra(int);
         void setFecha(Fecha);
