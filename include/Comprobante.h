@@ -1,14 +1,18 @@
 #ifndef COMPROBANTE_H
 #define COMPROBANTE_H
 
+#include "Fecha.h"
+#include "Impuesto.h"
+#include "Proveedor.h"
 
 class Comprobante
 {
     private:
         int _idComp;
-        char letra[1];
-        Fecha fechaContabilizacion;
-        Fecha fechaComp;
+        char _letra[1];
+        Fecha _fechaContabilizacion;
+        Fecha _fechaComp;
+        int _tipo;
         int _idProveedor;
         int _pv;
         int _numFac;
@@ -20,10 +24,12 @@ class Comprobante
         bool _estado;
     public:
         Comprobante();
-        Comprobante(int);
         void setIdComp(int);
-        void setLetra(int);
+        void setLetra(char*);
+        void setFechaContabilizacion(Fecha);
+        void setFechaFactura(Fecha);
         void setFecha(Fecha);
+        void setTipo(int);
         void setPv(int);
         void setNumFac(int);
         void setCuentaContable(int);
@@ -33,7 +39,11 @@ class Comprobante
         void setEstado(bool);
         int getIdComp();
         char * getLetra();
-        int idProveedor();
+        Fecha getFechaContabilizacion();
+        Fecha getFechaFactura();
+        int getTipo();
+        int getIdProveedor();
+        Proveedor getRazonSocial(int);
         int getPV();
         int getNumFac();
         int getCuentaContable();
@@ -42,7 +52,7 @@ class Comprobante
         Impuesto getIVA();
         float getImporteTotal();
         bool getEstado();
-        void cargar();
+        void cargar(int);
         void mostrar();
         bool leerDeDisco();
         bool guardarEnDisco();

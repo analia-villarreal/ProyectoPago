@@ -1,12 +1,14 @@
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
+#include <clocale>
 #include "Comprobante.h"
 #include "Fecha.h"
 #include "Impuesto.h"
 #include "MediosDePagos.h"
 #include "OrdenDePago.h"
 #include "PlanDeCuentas.h"
+#include "Proveedor.h"
 #include "rlutil.h"
 
 using namespace std;
@@ -15,11 +17,10 @@ using namespace rlutil;
 
 int main()
 {
-    setlocale(LL_ALL; "Spanish");
+    setlocale(LC_ALL, "Spanish");
+
     int opcion;
 
-
-    Comprobante obj(decision);
 
     system("cls");
 
@@ -42,27 +43,22 @@ int main()
         switch(opcion)
         {
         case 1:
-            Comprobante obj(tipoComp);
-            cout << "Factura: 1  Nota de Crédito: 2"<< endl;
+        {
             int tipoComp;
+            Comprobante reg;
+            cout << "Factura: 1  Nota de Crédito: 2"<< endl;
             cin>>tipoComp;
-            break;
+            reg.cargar(tipoComp);
+        }
+        break;
         case 2:
-            int agua;
-            cout << "CANTIDAD DE AGUA A LLENAR: ";
-            cin >> agua;
-            obj.llenar(agua);
             break;
         case 3:
-            obj.vaciar();
+            break;
+        case 4:
             break;
         case 5:
-            obj.apagar();
             break;
-
-
-
-
 
         }
         system("pause");
@@ -71,8 +67,6 @@ int main()
 
     }
     while(opcion != 0);
-
-
 
 
     return 0;

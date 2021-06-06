@@ -6,7 +6,7 @@ class MediosDePagos
 {
     private:
         int idMp;
-        char
+
     public:
         MediosDePagos();
 

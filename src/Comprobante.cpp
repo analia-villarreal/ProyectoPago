@@ -2,16 +2,15 @@
 #include <cstring>
 #include <cstdlib>
 #include "Comprobante.h"
-#include "Fecha.h"
 #include "Impuesto.h"
 #include "PlanDeCuentas.h"
+#include "Proveedor.h"
 
 using namespace std;
 
-Comprobante::Comprobante(int tipoComp)
+Comprobante::Comprobante()
 {
 
-    _tipo=tipoComp;
 
 }
 
@@ -25,6 +24,23 @@ void Comprobante::setLetra(char* letra)
 
     strcpy(_letra,letra);
 }
+
+void Comprobante::setFechaContabilizacion(Fecha contabilizacion){
+
+    _fechaContabilizacion = contabilizacion;
+}
+
+void Comprobante::setFechaFactura(Fecha factura){
+
+    _fechaComp = factura;
+}
+
+void Comprobante::setTipo(int tipo)
+{
+
+    _tipo=tipo;
+}
+
 void Comprobante::setPv(int pv)
 {
 
@@ -74,7 +90,25 @@ char * Comprobante:: getLetra()
 
     return _letra;
 }
-int Comprobante::idProveedor()
+
+Fecha Comprobante::getFechaContabilizacion()
+{
+
+    return _fechaContabilizacion;
+}
+
+Fecha Comprobante::getFechaFactura()
+{
+
+    return _fechaComp;
+}
+int Comprobante::getTipo()
+{
+
+    return _tipo;
+}
+
+int Comprobante::getIdProveedor()
 {
 
     return _idProveedor;
@@ -102,7 +136,7 @@ int Comprobante::getCantidad()
 float Comprobante::getPU()
 {
 
-    return _pu;
+    return _PU;
 }
 float Comprobante::getImporteTotal()
 {
@@ -115,7 +149,7 @@ bool Comprobante::getEstado()
     return _estado;
 
 }
-void Comprobante::cargar()
+void Comprobante::cargar(int tipo)
 {
 
       //  int _idComp;
@@ -132,18 +166,37 @@ void Comprobante::cargar()
       //  float _importeTotal;
       //  bool _estado;
 
-<<"ESTA CARGANDO UNA"<< _tipo <<endl;
+  setTipo(tipo);
+
+cout<<"ESTA CARGANDO UNA"<< getTipo() <<endl;
 
 cout<<"LETRA"<<endl;
 cout<<"FECHA CONTABILIZACIÓN"<<endl;
-cout<<"
-cout<<"
-cout<<"
-cout<<"
-cout<<"
-cout<<"
-cout<<"
+cout<<"FECHA COMPROBANTE"<<endl;
+cout<<"PROVEEDOR"<<endl;
+cout<<"PV"<<endl;
+cout<<"NUMERO"<<endl;
+cout<<"CUENTA CONTABLE"<<endl;
+cout<<"CANTIDAD"<<endl;
+cout<<"PRECIO"<<endl;
+cout<<"TOTAL"<<endl;
 
+cin.ignore();
+cin.getline(_letra,1);
+
+int dc,mc,ac,df,mf,af;
+
+cin>> dc;
+cin>> mc;
+cin>> ac;
+
+cin>> df;
+cin>> mf;
+cin>> af;
+
+cin>> _idProveedor;
+
+//cout>> getRazonSocial(_idProveedor)>> endl; VER COMO AGREGO EL NOMBRE DEL PROVEEDOR
 
 
 }
