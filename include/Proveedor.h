@@ -11,8 +11,9 @@ class Proveedor
         char _razonSocial[45];
         int _CUIT;
         int _juridiccion;
-       // Impuesto _retIIBB;
-       // Impuesto _retGanancias;
+       Impuesto _retIIBB;
+       Impuesto _retGanancias;
+       Impuesto _IVA;
 
     public:
         Proveedor();
@@ -20,10 +21,16 @@ class Proveedor
         void setRazonSocial(char*);
         void setCUIT();
         void setJuridiccion();
+        Impuesto setRetIIBB(float);
+        Impuesto setRetGanancias(float));
+        Impuesto setIVA();
         int getId();
         char * getRazonSocial(char);
         int getCUIT();
         int getJuridiccion();
+        Impuesto getRetIIBB(Impuesto);
+        Impuesto getRetGanancias(Impuesto);
+        Impuesto getIVA(Impuesto);
         void cargar();
         void mostrar();
         bool guardarEnDisco();

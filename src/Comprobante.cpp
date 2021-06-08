@@ -246,5 +246,14 @@ bool Comprobante::leerDeDisco()
 
 void Comprobante:: guardarEnDisco(int)
 {
-
+    bool guardo;
+    FILE *p;
+    p = fopen("comprobantes.dat", "rb+");
+    if (p == NULL){
+        return false;
+    }
+    fseek(p, sizeof(Comprobante)*pos, SEEK_SET);
+    guardo = fwrite(this, sizeof(Comprobante), 1, p);
+    fclose(p);
+    return guardo;
 }
