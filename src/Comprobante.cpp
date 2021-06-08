@@ -25,12 +25,14 @@ void Comprobante::setLetra(char* letra)
     strcpy(_letra,letra);
 }
 
-void Comprobante::setFechaContabilizacion(Fecha contabilizacion){
+void Comprobante::setFechaContabilizacion(Fecha contabilizacion)
+{
 
     _fechaContabilizacion = contabilizacion;
 }
 
-void Comprobante::setFechaFactura(Fecha factura){
+void Comprobante::setFechaFactura(Fecha factura)
+{
 
     _fechaComp = factura;
 }
@@ -152,49 +154,48 @@ bool Comprobante::getEstado()
 void Comprobante::cargar(int tipo)
 {
 
-      //  int _idComp;
-      //  char letra[1];
-      //  Fecha fechaContabilizacion;
-      //  Fecha fechaComp;
-      //  int _idProveedor;
-      //  int _pv;
-      //  int _numFac;
-      //  int _cuentaContable;
-      //  int _cantidad;
-      //  float _PU;
-      //  Impuesto IVA;
-      //  float _importeTotal;
-      //  bool _estado;
+    //  int _idComp;
+    //  char letra[1];
+    //  Fecha fechaContabilizacion;
+    //  Fecha fechaComp;
+    //  int _idProveedor;
+    //  int _pv;
+    //  int _numFac;
+    //  int _cuentaContable;
+    //  int _cantidad;
+    //  float _PU;
+    //  Impuesto IVA;
+    //  float _importeTotal;
+    //  bool _estado;
 
-  setTipo(tipo);
+    setTipo(tipo);
 
-cout<<"ESTA CARGANDO UNA"<< getTipo() <<endl;
+    cout<<"ESTA CARGANDO UNA"<< getTipo() <<endl;
+    cout<<"LETRA"<<endl;
+    cout<<"FECHA CONTABILIZACIÓN"<<endl;
+    cout<<"FECHA COMPROBANTE"<<endl;
+    cout<<"PROVEEDOR"<<endl;
+    cout<<"PV"<<endl;
+    cout<<"NUMERO"<<endl;
+    cout<<"CUENTA CONTABLE"<<endl;
+    cout<<"CANTIDAD"<<endl;
+    cout<<"PRECIO"<<endl;
+    cout<<"TOTAL"<<endl;
 
-cout<<"LETRA"<<endl;
-cout<<"FECHA CONTABILIZACIÓN"<<endl;
-cout<<"FECHA COMPROBANTE"<<endl;
-cout<<"PROVEEDOR"<<endl;
-cout<<"PV"<<endl;
-cout<<"NUMERO"<<endl;
-cout<<"CUENTA CONTABLE"<<endl;
-cout<<"CANTIDAD"<<endl;
-cout<<"PRECIO"<<endl;
-cout<<"TOTAL"<<endl;
+    cin.ignore();
+    cin.getline(_letra,1);
 
-cin.ignore();
-cin.getline(_letra,1);
+    int dc,mc,ac,df,mf,af;
 
-int dc,mc,ac,df,mf,af;
+    cin>> dc;
+    cin>> mc;
+    cin>> ac;
 
-cin>> dc;
-cin>> mc;
-cin>> ac;
+    cin>> df;
+    cin>> mf;
+    cin>> af;
 
-cin>> df;
-cin>> mf;
-cin>> af;
-
-cin>> _idProveedor;
+    cin>> _idProveedor;
 
 //cout>> getRazonSocial(_idProveedor)>> endl; VER COMO AGREGO EL NOMBRE DEL PROVEEDOR
 
@@ -203,15 +204,46 @@ cin>> _idProveedor;
 void Comprobante::mostrar()
 {
 
-}
-bool Comprobante::leerDeDisco()
-{
+    cout<<"FECHA CONTABILIZACIÓN"<< _fechaContabilizacion <<endl;
+    cout<<"FECHA COMPROBANTE"<< _fechaComp <<endl;
+    cout<<"CODIGO PROVEEDOR"<< getIdProveedor() <<endl;
+    cout<<"NOMBRE PROVEEDOR"<< getRazonSocial() <<endl;
+    cout<<"TIPO"<< _tipo <<endl;
+    cout<<"COMPROBANTE"<<_letra<<"-"<< _pv <<"-"<< _numFac <<endl;
+    cout<<"CUENTA CONTABLE"<< _cuentaContable <<endl;
+    cout<<"IMPORTE NETO"<<endl;
+    cout<<"TASA IVA"<< getIva() <<endl;
+    cout<<"TOTAL"<< _importeTotal <<endl;
 
 }
 bool Comprobante::guardarEnDisco()
 {
-
+    bool guardo;
+    FILE *p;
+    p = fopen("comprobantes.dat", "ab");
+    if (p == NULL)
+    {
+        return false;
+    }
+    guardo = fwrite(this, sizeof(Comprobante), 1, p);
+    fclose(p);
+    return guardo;
 }
+bool Comprobante::leerDeDisco()
+{
+    bool lectura;
+    FILE *p;
+    p = fopen("comprobantes.dat", "rb");
+    if (p == NULL)
+    {
+        return false;
+    }
+    fseek(p, sizeof(Comprobante), SEEK_SET);
+    lectura = fread(this, sizeof(Comprobante), 1, p);
+    fclose(p);
+    return lectura;
+}
+
 void Comprobante:: guardarEnDisco(int)
 {
 
