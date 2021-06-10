@@ -1,5 +1,15 @@
 #include "Fecha.h"
 
+#include "Proveedor.h"
+#include "Impuesto.h"
+#include "Impuesto.h"
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+
+
+using namespace std;
+
 Fecha::Fecha()
 {
     /// FECHA DEL SISTEMA
@@ -30,4 +40,18 @@ Fecha::Fecha(int d, int m, int a)
         _mes=m;
         _anio=a;
     }
+}
+
+
+void Fecha::cargar(){
+
+    int d,m,a;
+
+    cout<<"DIA"<<endl;
+    cout<<"MES"<<endl;
+    cout<<"AÑO"<<endl;
+
+    cin>>d;
+    cin>>m;
+    cin>>a;
 }

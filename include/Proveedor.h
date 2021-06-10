@@ -24,6 +24,7 @@ class Proveedor
         void setCUIT(int);
         void setJuridiccion(int);
         void setNombJu(char*);
+        void setTipoRe(char*);
         Impuesto setRetIIBB(float);
         Impuesto setRetGanancias(float);
         Impuesto setIVA();

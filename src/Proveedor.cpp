@@ -1,6 +1,6 @@
 #include "Proveedor.h"
 #include "Impuesto.h"
-#include "Impuesto.h"
+
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
@@ -36,12 +36,14 @@ void Proveedor::setNombJu(char* nombJur)
 }
 void Proveedor::setTipoRe(char* tipo)
 {
-   _tipoReg=tipo;
+   strcpy(_tipoReg,tipo);
 }
 void Proveedor::setRetIIBB(Impuesto retIIBB)
 {
     _retIIBB=retIIBB;
 }
+
+
 void Proveedor::setRetGanancias(Impuesto retGanancias)
 {
     _retGanancias=retGanancias;

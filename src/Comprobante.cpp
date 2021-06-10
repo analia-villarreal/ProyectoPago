@@ -156,18 +156,10 @@ void Comprobante::cargar(int tipo)
     cout<<"PRECIO"<<endl;
     cout<<"TOTAL"<<endl;
 
-    cin.ignore();
-    cin.getline(_letra,1);
+    //cin.ignore();
+    //cin.getline(_letra,1);
 
-    int dc,mc,ac,df,mf,af;
-
-    cin>> dc;
-    cin>> mc;
-    cin>> ac;
-
-    cin>> df;
-    cin>> mf;
-    cin>> af;
+    _fechaContabilizacion.cargar();
 
     cin>> _idProveedor;
 
@@ -175,7 +167,7 @@ void Comprobante::cargar(int tipo)
 
 
 }
-void Comprobante::mostrar()
+/*void Comprobante::mostrar()
 {
 
     cout << "FECHA CONTABILIZACIÓN" << _fechaContabilizacion <<endl;
@@ -190,6 +182,8 @@ void Comprobante::mostrar()
     cout<< "TOTAL" << _importeTotal <<endl;
 
 }
+
+*/
 bool Comprobante::guardarEnDisco()
 {
     bool guardo;
@@ -218,16 +212,18 @@ bool Comprobante::leerDeDisco()
     return lectura;
 }
 
-void Comprobante:: guardarEnDisco(int)
+/*void Comprobante::guardarEnDisco(int pos)
 {
+
     bool guardo;
     FILE *p;
     p = fopen("comprobantes.dat", "rb+");
     if (p == NULL){
-        return false;
+        return -1;
     }
     fseek(p, sizeof(Comprobante)*pos, SEEK_SET);
     guardo = fwrite(this, sizeof(Comprobante), 1, p);
     fclose(p);
     return guardo;
 }
+*/
