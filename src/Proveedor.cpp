@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
-
+#include <cstdio>
 
 using namespace std;
 
@@ -80,7 +80,7 @@ Impuesto Proveedor::getRetGanancias()
 {
     return _retGanancias;
 }
-Impuesto Proveedor::getIVA(Impuesto)
+Impuesto Proveedor::getIVA()
 {
     return _IVA;
 }

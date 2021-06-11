@@ -5,6 +5,7 @@
 #include "Impuesto.h"
 #include "PlanDeCuentas.h"
 #include "Proveedor.h"
+#include "Funciones.h"
 
 using namespace std;
 
@@ -145,23 +146,30 @@ void Comprobante::cargar(int tipo)
     setTipo(tipo);
 
     cout<<"ESTA CARGANDO UNA"<< getTipo() <<endl;
-    cout<<"LETRA"<<endl;
     cout<<"FECHA CONTABILIZACIÓN"<<endl;
+    _fechaContabilizacion.cargar();
+
     cout<<"FECHA COMPROBANTE"<<endl;
+    _fechaComp.cargar();
     cout<<"PROVEEDOR"<<endl;
+
+    // llamar a la funcion randomProveedor() --> Mostrar un random de 5 proveedores con su categoria
+
+    cout<<"LETRA"<<endl;
+    // Mostrar opciones
     cout<<"PV"<<endl;
     cout<<"NUMERO"<<endl;
+    //
     cout<<"CUENTA CONTABLE"<<endl;
     cout<<"CANTIDAD"<<endl;
     cout<<"PRECIO"<<endl;
     cout<<"TOTAL"<<endl;
 
-    //cin.ignore();
-    //cin.getline(_letra,1);
-
-    _fechaContabilizacion.cargar();
 
     cin>> _idProveedor;
+
+    cin.ignore();
+    cin.getline(_letra,1);
 
 //cout>> getRazonSocial(_idProveedor)>> endl; VER COMO AGREGO EL NOMBRE DEL PROVEEDOR
 

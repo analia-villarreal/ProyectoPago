@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1622760013 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\impuesto.cpp
+1623367237 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\impuesto.cpp
 	"Impuesto.h"
 
 1622842249 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\impuesto.h
@@ -9,7 +9,7 @@
 
 1623017351 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\mediosdepagos.h
 
-1623366040 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\fecha.cpp
+1623367252 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\fecha.cpp
 	"Fecha.h"
 	"Proveedor.h"
 	"Impuesto.h"
@@ -17,6 +17,7 @@
 	<iostream>
 	<cstring>
 	<cstdlib>
+	<cstdio>
 
 1623358071 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\fecha.h
 	<time.h>
@@ -31,14 +32,18 @@
 
 1622759347 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\plandecuentas.h
 
-1623017624 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\proveedor.cpp
+1623367661 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\proveedor.cpp
 	"Proveedor.h"
 	"Impuesto.h"
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<cstdio>
 
-1623366454 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\proveedor.h
+1623367635 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\proveedor.h
 	"Impuesto.h"
 
-1623366529 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\comprobante.cpp
+1623369145 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\comprobante.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -52,11 +57,12 @@
 	"Impuesto.h"
 	"Proveedor.h"
 
-1623020975 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
+1623368805 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
 	<clocale>
+	<cstdio>
 	"Comprobante.h"
 	"Fecha.h"
 	"Impuesto.h"
