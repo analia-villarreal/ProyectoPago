@@ -1,68 +1,122 @@
 # depslib dependency file v1.0
-1623367237 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\impuesto.cpp
+1623638885 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\impuesto.cpp
 	"Impuesto.h"
+	"Proveedor.h"
+	"PlanDeCuentas.h"
+	"rlutil.h"
+	"Funciones.h"
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<conio.h>
+	<clocale>
+	<cstdio>
 
-1622842249 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\impuesto.h
+1623716997 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\impuesto.h
 
-1622760164 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\mediosdepagos.cpp
+1623638144 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\mediosdepagos.cpp
 	"MediosDePagos.h"
+	<iostream>
+	"Impuesto.h"
+	"Proveedor.h"
+	"PlanDeCuentas.h"
+	"rlutil.h"
+	"Funciones.h"
+	<cstring>
+	<cstdlib>
+	<conio.h>
+	<clocale>
+	<cstdio>
 
 1623017351 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\mediosdepagos.h
 
-1623367252 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\fecha.cpp
+1623639088 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\fecha.cpp
 	"Fecha.h"
 	"Proveedor.h"
-	"Impuesto.h"
 	"Impuesto.h"
 	<iostream>
 	<cstring>
 	<cstdlib>
+	"rlutil.h"
 	<cstdio>
+	<conio.h>
 
 1623358071 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\fecha.h
 	<time.h>
 
-1622760135 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\ordendepago.cpp
+1623638286 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\ordendepago.cpp
 	"OrdenDePago.h"
+	"Impuesto.h"
+	"Proveedor.h"
+	"PlanDeCuentas.h"
+	"rlutil.h"
+	"Funciones.h"
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<conio.h>
+	<clocale>
+	<cstdio>
 
 1622760135 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\ordendepago.h
 
-1622759348 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\plandecuentas.cpp
+1623638300 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\plandecuentas.cpp
 	"PlanDeCuentas.h"
-
-1622759347 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\plandecuentas.h
-
-1623367661 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\proveedor.cpp
-	"Proveedor.h"
 	"Impuesto.h"
+	"Proveedor.h"
+	"rlutil.h"
+	"Funciones.h"
+	<conio.h>
 	<iostream>
 	<cstring>
 	<cstdlib>
 	<cstdio>
 
-1623367635 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\proveedor.h
-	"Impuesto.h"
+1623452761 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\plandecuentas.h
 
-1623369145 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\comprobante.cpp
+1623973505 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\proveedor.cpp
+	"Proveedor.h"
+	"Impuesto.h"
+	"PlanDeCuentas.h"
+	"Funciones.h"
 	<iostream>
 	<cstring>
 	<cstdlib>
+	<cstdio>
+	<conio.h>
+	"rlutil.h"
+	<clocale>
+
+1623886744 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\proveedor.h
+	"Impuesto.h"
+
+1623887149 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\comprobante.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<conio.h>
+	<clocale>
+	<cstdio>
 	"Comprobante.h"
 	"Impuesto.h"
 	"PlanDeCuentas.h"
 	"Proveedor.h"
+	"Funciones.h"
+	"rlutil.h"
 
-1623192256 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\comprobante.h
+1623539137 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\comprobante.h
 	"Fecha.h"
 	"Impuesto.h"
 	"Proveedor.h"
 
-1623368805 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
+1623973127 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
 	<clocale>
 	<cstdio>
+	<conio.h>
+	<ctime>
 	"Comprobante.h"
 	"Fecha.h"
 	"Impuesto.h"
@@ -71,6 +125,7 @@
 	"PlanDeCuentas.h"
 	"Proveedor.h"
 	"rlutil.h"
+	"Funciones.h"
 
 1604164361 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\rlutil.h
 	<iostream>
@@ -85,4 +140,24 @@
 	<sys/ioctl.h>
 	<sys/types.h>
 	<sys/time.h>
+
+1623887426 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
+
+1623887459 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
+	"Funciones.h"
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<clocale>
+	<cstdio>
+	<conio.h>
+	<ctime>
+	"Comprobante.h"
+	"Fecha.h"
+	"Impuesto.h"
+	"MediosDePagos.h"
+	"OrdenDePago.h"
+	"PlanDeCuentas.h"
+	"Proveedor.h"
+	"rlutil.h"
 

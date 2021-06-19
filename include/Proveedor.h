@@ -12,11 +12,18 @@ class Proveedor
         int _CUIT;
         int _juridiccion;
         char _nombJuridiccion[20];
-        char _tipoReg[2];
-       Impuesto _retIIBB;
-       Impuesto _retGanancias;
-       Impuesto _IVA;
+        char _categoria[2];
+        bool _retIIBB;
+        bool _retGanancias; //sisi iva 0 es exento
+        int _IVA;
+        // tiene distintos impuestos
+        // en una factura tomo el IVA
+        // en un orden de pago tomo los codigos de retenciones
+        // cargarles id de impuestos que despues calculo en la factura y OP
+        // sisisi no me dijeron nada de que no podia hacerlo...
 
+        //las clases asi
+        // solo voy a hacer comprobante y proveedor cargar una factura y cargar un proveedor... para la semana que viene..
     public:
         Proveedor();
         void setIdProveedor(int);
@@ -24,23 +31,25 @@ class Proveedor
         void setCUIT(int);
         void setJuridiccion(int);
         void setNombJu(char*);
-        void setTipoRe(char*);
-        void setRetIIBB(Impuesto);
-        void setRetGanancias(Impuesto);
-        void setIVA(Impuesto);
+        void setCategoria(char*);
+        void setRetIIBB(bool);
+        void setRetGanancias(bool);
+        void setIVA(int);
         int getIdProveedor();
         char * getRazonSocial();
         int getCUIT();
         int getJuridiccion();
         char * getNombJur();
-        Impuesto getRetIIBB();
-        Impuesto getRetGanancias();
-        Impuesto getIVA();
-        void cargar();
+        char * getCategoria();
+        bool getRetIIBB();
+        bool getRetGanancias();
+        int  getIVA();//switch cuento entro
+        bool cargar();
         void mostrar();
         bool guardarEnDisco();
         void guardarEnDisco(int);
-        bool leerEnDisco();
+        bool leerDeDisco();
+        bool leerDeDisco(int);
 
 };
 

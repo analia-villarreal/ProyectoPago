@@ -1,13 +1,21 @@
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
+#include <conio.h>
+#include <clocale>
+#include <cstdio>
+
 #include "Comprobante.h"
 #include "Impuesto.h"
 #include "PlanDeCuentas.h"
 #include "Proveedor.h"
 #include "Funciones.h"
+#include "rlutil.h"
 
 using namespace std;
+using namespace rlutil;
+
+
 
 Comprobante::Comprobante()
 {
@@ -49,7 +57,11 @@ void Comprobante::setPv(int pv)
 }
 void Comprobante::setNumFac(int numFac)
 {
-    _numFac=numFac;
+   if(numFac<99999999)
+    {
+        _numFac=numFac;
+    }
+
 }
 void Comprobante::setCuentaContable(int cuenta)
 {
@@ -128,70 +140,81 @@ bool Comprobante::getEstado()
 }
 void Comprobante::cargar(int tipo)
 {
-
-    //  int _idComp;
-    //  char letra[1];
-    //  Fecha fechaContabilizacion;
-    //  Fecha fechaComp;
-    //  int _idProveedor;
-    //  int _pv;
-    //  int _numFac;
-    //  int _cuentaContable;
-    //  int _cantidad;
-    //  float _PU;
-    //  Impuesto IVA;
-    //  float _importeTotal;
-    //  bool _estado;
+    setlocale(LC_ALL, "Spanish");
+    int x;
 
     setTipo(tipo);
 
-    cout<<"ESTA CARGANDO UNA"<< getTipo() <<endl;
-    cout<<"FECHA CONTABILIZACIÓN"<<endl;
+    if(getTipo()==1){
+        cout<<"ESTA CARGANDO UNA FACTURA" <<endl;
+    }
+    if(getTipo()==2){
+        cout<<"ESTA CARGANDO UNA NOTA DE CREDITO"<<endl;
+    }
+    //marco_comprobante();
+
+   gotoxy(1,4);
+   cout<<"FECHA CONTABILIZACIÓN"<<endl;
     _fechaContabilizacion.cargar();
 
     cout<<"FECHA COMPROBANTE"<<endl;
     _fechaComp.cargar();
     cout<<"PROVEEDOR"<<endl;
 
+    rand_proveedores();
+
     // llamar a la funcion randomProveedor() --> Mostrar un random de 5 proveedores con su categoria
-
-    cout<<"LETRA"<<endl;
-    // Mostrar opciones
-    cout<<"PV"<<endl;
-    cout<<"NUMERO"<<endl;
-    //
-    cout<<"CUENTA CONTABLE"<<endl;
-    cout<<"CANTIDAD"<<endl;
-    cout<<"PRECIO"<<endl;
-    cout<<"TOTAL"<<endl;
-
 
     cin>> _idProveedor;
 
+    cout<<buscarProveedor(_idProveedor)<<endl;
+
+    cout<<"LETRA"<<endl;
     cin.ignore();
     cin.getline(_letra,1);
+    // Mostrar opciones
+    cout<<"PV"<<endl;
+    cin>> _pv;
+    cout<<"NUMERO"<<endl;
+    cin>> _numFac;
+    //cuenta contable del proveedor
+    cout<<"CUENTA CONTABLE"<<endl;
+    cout<<"CANTIDAD"<<endl;
+    cin >> _cantidad;
+    cout<<"PRECIO"<<endl;
+    cin >> _PU;
+    cout<<"IVA"<<endl;
+//    cin >> _IVA;
+    _importeTotal=_pv*_cantidad;
+    cout<<"TOTAL"<< _importeTotal<< endl;
 
-//cout>> getRazonSocial(_idProveedor)>> endl; VER COMO AGREGO EL NOMBRE DEL PROVEEDOR
+    guardarEnDisco();
+
+    if(guardarEnDisco()==true){
+        cout<<"Se guardó la factura correctamente"<< _importeTotal<< endl;
+        //menuErrores();
+    }
+
+
 
 
 }
-/*void Comprobante::mostrar()
+void Comprobante::mostrar()
 {
 
-    cout << "FECHA CONTABILIZACIÓN" << _fechaContabilizacion <<endl;
-    cout << "FECHA COMPROBANTE" << _fechaFactura <<endl;
-    cout<< "CODIGO PROVEEDOR" << getIdProveedor() <<endl;
-    cout<< "NOMBRE PROVEEDOR" << getRazonSocial() <<endl;
+    //cout<< "FECHA CONTABILIZACIÓN" << _fechaContabilizacion <<endl;
+    //cout<< "FECHA COMPROBANTE" << _fechaFactura <<endl;
+    //cout<< "CODIGO PROVEEDOR" << getIdProveedor() <<endl;
+    //cout<< "NOMBRE PROVEEDOR" << getRazonSocial() <<endl;
     cout<< "TIPO"<< _tipo <<endl;
     cout<< "COMPROBANTE" <<_letra << "-" << _pv << "-" << _numFac <<endl;
     cout<< "CUENTA CONTABLE" << _cuentaContable <<endl;
     cout<< "IMPORTE NETO" <<endl;
-    cout<< "TASA IVA" << getIva() <<endl;
+//    cout<< "TASA IVA" << getIva() <<endl;
     cout<< "TOTAL" << _importeTotal <<endl;
 
 }
 
-*/
 bool Comprobante::guardarEnDisco()
 {
     bool guardo;
@@ -220,18 +243,18 @@ bool Comprobante::leerDeDisco()
     return lectura;
 }
 
-/*void Comprobante::guardarEnDisco(int pos)
+void Comprobante::guardarEnDisco(int pos)
 {
 
     bool guardo;
     FILE *p;
     p = fopen("comprobantes.dat", "rb+");
     if (p == NULL){
-        return -1;
+        return;
     }
     fseek(p, sizeof(Comprobante)*pos, SEEK_SET);
     guardo = fwrite(this, sizeof(Comprobante), 1, p);
     fclose(p);
-    return guardo;
+    return;
 }
-*/
+

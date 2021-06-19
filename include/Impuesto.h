@@ -12,6 +12,24 @@ class Impuesto
         float _tasa;
         float _minNoImponible;
 
+        //Impuesto:--> ingresos brutos --- ganancias---iva
+        // retencion percepcion
+
+        // diferente por impuesto va a ser siempre
+        // no lo puedo cargar directo en el proveedor...
+
+        //iibb
+        //ganan
+        //iva 10.5 iva =0 porque no aplica
+        //iva 21
+        //iva 0
+
+        //si siis eso entiendo
+
+        // si eso no aplica hago herencia-- no es tan complicado creo solo IVA
+        // no no depende el tipo de proveedor
+
+
     public:
         Impuesto();
         void setidImpuesto(int);
