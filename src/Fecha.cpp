@@ -35,12 +35,23 @@ Fecha::Fecha(int d, int m, int a)
 }
 
 
-void Fecha::cargar(){
+void Fecha::cargar()
+{
 
     int d,m,a;
 
+
+
     cout<<"DIA"<<endl;
     cin>>d;
+
+    while (d <0 || d >32)
+    {
+        cout << "iNGRESE UN DIA ENTRE 1 Y 31" << endl;
+        cout << "DIA: " << endl;
+        cin >> d;
+
+    }
     cout<<"MES"<<endl;
     cin>>m;
     cout<<"AÑO"<<endl;

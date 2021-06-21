@@ -75,6 +75,10 @@ void Comprobante::setPU(float pu)
 {
     _PU=pu;
 }
+void Comprobante::setIVA(float iva)
+{
+    _IVA=iva;
+}
 void Comprobante::setImporteTotal(float importe)
 {
     _importeTotal=importe;
@@ -130,6 +134,11 @@ float Comprobante::getPU()
 {
     return _PU;
 }
+float Comprobante::getIVA()
+{
+    return _IVA;
+}
+
 float Comprobante::getImporteTotal()
 {
     return _importeTotal;
@@ -142,7 +151,7 @@ void Comprobante::cargar(int tipo)
 {
     setlocale(LC_ALL, "Spanish");
     int x;
-
+    float IVA;
     setTipo(tipo);
 
     if(getTipo()==1){
@@ -184,36 +193,49 @@ void Comprobante::cargar(int tipo)
     cout<<"PRECIO"<<endl;
     cin >> _PU;
     cout<<"IVA"<<endl;
-//    cin >> _IVA;
+    float tasa;
+    tasa=buscarAlicuota(_idProveedor);
+
+
+    IVA=(((_PU*_cantidad)*tasa)/100);
+    setIVA(IVA);
+
+    cout<<"IVA"<<endl;
     _importeTotal=_pv*_cantidad;
     cout<<"TOTAL"<< _importeTotal<< endl;
 
-    guardarEnDisco();
-
-    if(guardarEnDisco()==true){
-        cout<<"Se guardó la factura correctamente"<< _importeTotal<< endl;
-        //menuErrores();
-    }
-
-
-
+    setEstado(true);
 
 }
 void Comprobante::mostrar()
 {
 
-    //cout<< "FECHA CONTABILIZACIÓN" << _fechaContabilizacion <<endl;
-    //cout<< "FECHA COMPROBANTE" << _fechaFactura <<endl;
-    //cout<< "CODIGO PROVEEDOR" << getIdProveedor() <<endl;
-    //cout<< "NOMBRE PROVEEDOR" << getRazonSocial() <<endl;
+    cout<< "FECHA CONTABILIZACIÓN" << _fechaContabilizacion <<endl;
+    cout<< "FECHA COMPROBANTE" << _fechaFactura <<endl;
+    cout<< "CODIGO PROVEEDOR" << getIdProveedor() <<endl;
+    cout<< "NOMBRE PROVEEDOR" << getRazonSocial() <<endl;
     cout<< "TIPO"<< _tipo <<endl;
     cout<< "COMPROBANTE" <<_letra << "-" << _pv << "-" << _numFac <<endl;
     cout<< "CUENTA CONTABLE" << _cuentaContable <<endl;
     cout<< "IMPORTE NETO" <<endl;
-//    cout<< "TASA IVA" << getIva() <<endl;
+    cout<< "TASA IVA" << getIva() <<endl;
     cout<< "TOTAL" << _importeTotal <<endl;
 
 }
+void listarComprobantes()
+{
+    int i=0;
+    Proveedor reg;
+
+    while(reg.leerDeDisco(i))
+    {
+        reg.mostrar();
+        cout << endl;
+        i++;
+    }
+
+}
+
 
 bool Comprobante::guardarEnDisco()
 {
@@ -228,7 +250,7 @@ bool Comprobante::guardarEnDisco()
     fclose(p);
     return guardo;
 }
-bool Comprobante::leerDeDisco()
+bool Comprobante::leerDeDisco(int pos)
 {
     bool lectura;
     FILE *p;
@@ -237,7 +259,7 @@ bool Comprobante::leerDeDisco()
     {
         return false;
     }
-    fseek(p, sizeof(Comprobante), SEEK_SET);
+    fseek(p, sizeof(Comprobante)*pos, SEEK_SET);
     lectura = fread(this, sizeof(Comprobante), 1, p);
     fclose(p);
     return lectura;

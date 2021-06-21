@@ -138,13 +138,6 @@ bool Proveedor::cargar()
     cout<<"Ingrese la condición de IVA 21%:1 10.5%:2  0%:3"<<endl;
     cin>> _IVA;
 
-    guardarEnDisco();
-
-    if(guardarEnDisco()==true)
-    {
-       cout<< "El proveedor se guardó correctamente"<<endl;
-    }
-
 }
 void Proveedor::mostrar()
 {
@@ -180,21 +173,6 @@ void Proveedor::guardarEnDisco(int pos)
     fclose(p);
     return;
 }
-bool Proveedor::leerDeDisco()
-{
-    bool lectura;
-    FILE *p;
-    p = fopen("proveedores.dat", "rb");
-    if (p == NULL)
-    {
-        return false;
-    }
-    fseek(p, sizeof(Proveedor), SEEK_SET);
-    lectura = fread(this, sizeof(Proveedor), 1, p);
-    fclose(p);
-    return lectura;
-}
-
 
 bool Proveedor::leerDeDisco(int pos)
 {

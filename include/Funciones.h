@@ -3,7 +3,7 @@
 
 void marco_comprobante();
 
-void cargarComprobante();
+void menuComprobante();
 
 void cargarProveedor();
 
@@ -15,9 +15,11 @@ void rand_proveedores();
 
 void listarProveedores();
 
-bool sinRepetidos(int, vec[], int);
+bool sinRepetidos(int,int[],int);
 
 bool soloNumeros(const char *);
+
+int buscarAlicuota(int);
 
 
 

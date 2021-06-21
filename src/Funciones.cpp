@@ -116,8 +116,8 @@ void cargarComprobante()
     int tipoComp;
     Comprobante reg;
     cout << "Factura: 1  Nota de Crédito: 2"<< endl;
-    cin>>tipoComp;
-    system("cls");
+    cin>>tipoComp
+    system("cls");;
 
     reg.cargar(tipoComp);
 
@@ -144,16 +144,131 @@ void listarProveedores()
         i++;
     }
 
-
 }
 
-bool soloNumeros(const char *cadena){
+bool soloNumeros(const char *cadena)
+{
     int i=0;
-    while(cadena[i] != '\0'){
-        if(!(cadena[i] >= '0' && cadena[i] <= '9')){
+    while(cadena[i] != '\0')
+    {
+        if(!(cadena[i] >= '0' && cadena[i] <= '9'))
+        {
             return false;
         }
         i++;
     }
     return true;
 }
+
+
+
+int buscarAlicuota(int idProveedor)
+{
+
+    Proveedor reg;
+    int i = 0;
+    while(reg.leerDeDisco(i))
+    {
+        if ( idProveedor == reg.getIdProveedor())
+        {
+            int  ali=reg.getIVA();
+
+            if(ali=1)
+            {
+                return 21;
+            }
+            if(ali=2)
+            {
+                return 10.5;
+            }
+            if(ali=3)
+            {
+                return 0;
+            }
+        }
+        i++;
+    }
+    return false;
+}
+
+void menuComprobante()
+{
+    Comprobante reg;
+    int opc;
+    while(true)
+    {
+        system("cls");
+        cout << "-----MENU COMPROBANTES-----" << endl;
+        cout << "-------------------------" << endl;
+        cout << "1. ALTA COMPROBANTEL" << endl;
+        cout << "2. BAJA COMPROBANTE"<<endl;
+        cout << "3. LISTAR COMPROBANTES" << endl;
+        cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
+        cout << "- SELECCIONE UNA OPCION: - " << endl;
+        cout << "-------------------------" << endl;
+        cin>>opc;
+        system("cls");
+        switch(opc)
+        {
+        case 1:
+            int tipoComp;
+            cout << "Factura: 1  Nota de Crédito: 2"<< endl;
+            cin>>tipoComp;
+            system("cls");
+            reg.cargar(tipoComp);
+            if(reg.getEstado()==true)
+            {
+                if(reg.grabarEnDisco()==true)
+                {
+                    cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
+                }
+                else
+                {
+                    cout<<"NO SE PUDO GRABAR EL REGISTRO"<<endl;
+                }
+            }
+            else
+            {
+                cout<<"ERROR DE DATOS"<<endl;
+            }
+            break;
+         case 3:
+            //BAJA COMPROBANTE;
+        case 3:
+            listarComprobantes();
+            break;
+        case 0:
+            return;
+            break;
+        default:
+            cout<<" OPCION INCORRECTA"<<endl;
+            break;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+

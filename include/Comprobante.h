@@ -19,7 +19,7 @@ class Comprobante
         int _cuentaContable;
         int _cantidad;
         float _PU;
-        Impuesto IVA;
+        float _IVA;
         float _importeTotal;
         bool _estado;
     public:
@@ -35,6 +35,7 @@ class Comprobante
         void setCuentaContable(int);
         void setCantidad(int);
         void setPU(float);
+        void setIVA(float);
         void setImporteTotal(float);
         void setEstado(bool);
         int getIdComp();
@@ -49,12 +50,12 @@ class Comprobante
         int getCuentaContable();
         int getCantidad();
         float getPU();
-        Impuesto getIVA();
+        float getIVA();
         float getImporteTotal();
         bool getEstado();
         void cargar(int);
         void mostrar();
-        bool leerDeDisco();
+        bool leerDeDisco(int);
         bool guardarEnDisco();
         void guardarEnDisco(int);
 

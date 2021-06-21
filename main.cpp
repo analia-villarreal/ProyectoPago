@@ -45,7 +45,7 @@ int main()
 
         switch(opcion)
         {
-        case 1:cargarComprobante();
+        case 1:menuComprobante();
 
         break;
         case 2:
