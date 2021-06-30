@@ -31,11 +31,10 @@ int main()
     {
         cout << "------PAGO A PROVEEDORES--------"<< endl;
         cout << "---EMPECEMOS A PRACTICAR--------"<< endl;
-        cout << "   1. CARGAR COMPROBANTE        "<< endl;
-        cout << "   2.                           "<< endl;
-        cout << "   3. CREAR PROVEEDOR           "<< endl;
-        cout << "   4. LISTAR PROVEEDORES        "<< endl;
-        cout << "   5.                           "<< endl;
+        cout << "   1. MENU COMPROBANTE          "<< endl;
+        cout << "   2. MENU PROVEEDOR            "<< endl;
+        cout << "   3.                           "<< endl;
+        cout << "   4.                           "<< endl;
         cout << "   0. SALIR                     "<< endl;
         cout << "--------------------------------"<< endl;
         cout << "OPCION: ";
@@ -48,14 +47,12 @@ int main()
         case 1:menuComprobante();
 
         break;
-        case 2:
+        case 2:menuProveedor();
             break;
-        case 3: cargarProveedor();
+        case 3: ;
             //no tengo ninguna validacion todavia
             break;
         case 4:listarProveedores();
-            break;
-        case 5:
             break;
 
         }

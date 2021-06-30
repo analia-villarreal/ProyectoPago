@@ -5,6 +5,12 @@ void marco_comprobante();
 
 void menuComprobante();
 
+void menuProveedor();
+
+void buscarNombProveedor(int);
+
+int buscarPosProveedor(int);
+
 void cargarProveedor();
 
 bool buscarProveedor(int);
@@ -15,11 +21,13 @@ void rand_proveedores();
 
 void listarProveedores();
 
-bool sinRepetidos(int,int[],int);
+void listarComprobantes();
+
+bool sinRepetidos(int,int[]);
 
 bool soloNumeros(const char *);
 
-int buscarAlicuota(int);
+float buscarAlicuota(int);
 
 
 

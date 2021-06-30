@@ -56,6 +56,10 @@ void Proveedor::setIVA(int iva)
 {
     _IVA=iva;
 }
+void Proveedor::setEstadoProv(bool estado)
+{
+    _estadoProveedor=estado;
+}
 int Proveedor::getIdProveedor()
 {
     return _idProveedor;
@@ -92,6 +96,12 @@ int Proveedor::getIVA()
 {
     return _IVA;
 }
+bool Proveedor::getEstadoProv()
+{
+    return _estadoProveedor;
+}
+
+
 // int _idProveedor;
 //  char _razonSocial[45];
 //  int _CUIT;
@@ -129,14 +139,15 @@ bool Proveedor::cargar()
     cin.ignore();
     cin.getline(_nombJuridiccion,45);
     cout<<"CATEGORIA           "<<endl;
-    cin.ignore();
-    cin.getline(_categoria,2);
+    //cin.ignore();
+    cin.getline(_categoria,3);
     cout<<"si retiene IIBB BA ingrese 1 sino 0"<<endl;
     cin>> _retIIBB;
     cout<<"si retiene Imp. a las ganancias ingrese 1 sino 0"<<endl;
     cin>> _retGanancias;
     cout<<"Ingrese la condición de IVA 21%:1 10.5%:2  0%:3"<<endl;
     cin>> _IVA;
+    setEstadoProv(true);
 
 }
 void Proveedor::mostrar()

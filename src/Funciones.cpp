@@ -49,6 +49,23 @@ int contarProveedores()
     fclose(p);
     return cr;
 }
+
+int  buscarPosProveedor(int idProveedor)
+{
+    Proveedor reg;
+    int i = 0;
+    while(reg.leerDeDisco(i))
+    {
+        if ( idProveedor == reg.getIdProveedor())
+        {
+            return i;
+        }
+        i++;
+    }
+    return -1;
+
+}
+
 bool buscarProveedor(int idProveedor)
 {
     Proveedor reg;
@@ -64,73 +81,78 @@ bool buscarProveedor(int idProveedor)
     return false;
 }
 
-bool sinRepetidos(int n, int vec[], int tam)
+
+void buscarNombProveedor(int idProveedor)
+{
+    Proveedor reg;
+
+    int pos;
+
+    pos=buscarPosProveedor(idProveedor);
+
+    reg.leerDeDisco(pos);
+
+    cout<<reg.getRazonSocial()<<endl;
+
+}
+
+
+bool sinRepetidos(int n, int vec[])
 {
 
-    for(int i=0; i<tam; i++)
+    for(int i=0; i<5; i++)
     {
         if(n == vec[i])
         {
             return true;
         }
-        return false;
-    }
 
+    }
+    return false;
 }
 
 
 
 void rand_proveedores()
 {
-    int vecNum[5];
+
+    int vecNum[5]= {};
+
     int prov;
 
     prov = contarProveedores();
 
+    int i=0;
+    int valor;
 
-    int i,valor;
-
-    for(i=0; i<5; i++)
+    while(i<5)
     {
+
         valor=rand()%prov+1;
-        while(sinRepetidos(valor,vecNum,5))
+        while(sinRepetidos(valor,vecNum)==false)
         {
             vecNum[i]=valor;
+            i++;
         }
+
     }
 
-    for( int j=0; j<5; j++)
+    for(int j=0; j<5; j++)
     {
         Proveedor reg;
-        reg.leerDeDisco(vecNum[j]);
-        cout<< vecNum[j] <<" - "<<reg.getRazonSocial()<<endl;
+
+        int pos;
+
+        pos=buscarPosProveedor(vecNum[j]);
+
+        reg.leerDeDisco(pos);
+
+        cout<<vecNum[j]<<"-"<< reg.getRazonSocial()<<endl;
+
     }
 
 }
 
-
-
-void cargarComprobante()
-{
-
-    int tipoComp;
-    Comprobante reg;
-    cout << "Factura: 1  Nota de Crédito: 2"<< endl;
-    cin>>tipoComp
-    system("cls");;
-
-    reg.cargar(tipoComp);
-
-}
-
-
-void cargarProveedor()
-{
-    Proveedor reg1;
-
-    reg1.cargar();
-
-}
 
 void listarProveedores()
 {
@@ -162,33 +184,39 @@ bool soloNumeros(const char *cadena)
 
 
 
-int buscarAlicuota(int idProveedor)
+float buscarAlicuota(int idProveedor)
 {
 
     Proveedor reg;
-    int i = 0;
-    while(reg.leerDeDisco(i))
-    {
-        if ( idProveedor == reg.getIdProveedor())
-        {
-            int  ali=reg.getIVA();
 
-            if(ali=1)
-            {
-                return 21;
-            }
-            if(ali=2)
-            {
-                return 10.5;
-            }
-            if(ali=3)
-            {
-                return 0;
-            }
+    int pos;
+
+    int ali;
+
+    pos=buscarPosProveedor(idProveedor);
+
+
+    while(reg.leerDeDisco(pos))
+    {
+
+
+        int  ali=reg.getIVA();
+
+        if(ali=1)
+        {
+            return 21;
         }
-        i++;
+        if(ali=2)
+        {
+            return 10.5;
+        }
+        if(ali=3)
+        {
+            return 0;
+        }
+
     }
-    return false;
+    return -1;
 }
 
 void menuComprobante()
@@ -199,13 +227,13 @@ void menuComprobante()
     {
         system("cls");
         cout << "-----MENU COMPROBANTES-----" << endl;
-        cout << "-------------------------" << endl;
-        cout << "1. ALTA COMPROBANTEL" << endl;
-        cout << "2. BAJA COMPROBANTE"<<endl;
-        cout << "3. LISTAR COMPROBANTES" << endl;
+        cout << "---------------------------" << endl;
+        cout << "1. ALTA COMPROBANTE"         << endl;
+        cout << "2. BAJA COMPROBANTE"         << endl;
+        cout << "3. LISTAR COMPROBANTES"      << endl;
         cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
         cout << "- SELECCIONE UNA OPCION: - " << endl;
-        cout << "-------------------------" << endl;
+        cout << "---------------------------" << endl;
         cin>>opc;
         system("cls");
         switch(opc)
@@ -218,7 +246,7 @@ void menuComprobante()
             reg.cargar(tipoComp);
             if(reg.getEstado()==true)
             {
-                if(reg.grabarEnDisco()==true)
+                if(reg.guardarEnDisco()==true)
                 {
                     cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
                 }
@@ -231,9 +259,10 @@ void menuComprobante()
             {
                 cout<<"ERROR DE DATOS"<<endl;
             }
+            system("pause");
             break;
-         case 3:
-            //BAJA COMPROBANTE;
+        case 2:
+        //BAJA COMPROBANTE;
         case 3:
             listarComprobantes();
             break;
@@ -246,27 +275,62 @@ void menuComprobante()
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+void menuProveedor()
+{
+    Proveedor reg1;
+    int opc;
+    while(true)
+    {
+        system("cls");
+        cout << "-----MENU PROVEEDOR--------" << endl;
+        cout << "---------------------------" << endl;
+        cout << "1. ALTA PROVEEDOR          " << endl;
+        cout << "2. BAJA PROVEEDOR          " << endl;
+        cout << "3. LISTAR PROVEDORES       " << endl;
+        cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
+        cout << "- SELECCIONE UNA OPCION: - " << endl;
+        cout << "---------------------------" << endl;
+        cin>>opc;
+        system("cls");
+        switch(opc)
+        {
+        case 1:
+            reg1.cargar();
+            if(reg1.getEstadoProv()==true)
+            {
+                if(reg1.guardarEnDisco()==true)
+                {
+                    cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
+                }
+                else
+                {
+                    cout<<"NO SE PUDO GRABAR EL REGISTRO"<<endl;
+                }
+            }
+            else
+            {
+                cout<<"ERROR DE DATOS"<<endl;
+            }
+            system("pause");
+            break;
+        case 2:
+        //BAJA PROVEEDOR;
+        case 3:
+            listarProveedores();
+            system("pause");
+            break;
+        case 0:
+            return;
+            break;
+        default:
+            cout<<" OPCION INCORRECTA"<<endl;
+            break;
+        }
+    }
 
 }
+
 
 
 

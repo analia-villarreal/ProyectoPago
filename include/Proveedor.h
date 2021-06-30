@@ -12,10 +12,11 @@ class Proveedor
         int _CUIT;
         int _juridiccion;
         char _nombJuridiccion[20];
-        char _categoria[2];
+        char _categoria[3];
         bool _retIIBB;
         bool _retGanancias; //sisi iva 0 es exento
         int _IVA;
+        bool _estadoProveedor;
         // tiene distintos impuestos
         // en una factura tomo el IVA
         // en un orden de pago tomo los codigos de retenciones
@@ -35,6 +36,7 @@ class Proveedor
         void setRetIIBB(bool);
         void setRetGanancias(bool);
         void setIVA(int);
+        void setEstadoProv(bool);
         int getIdProveedor();
         char * getRazonSocial();
         int getCUIT();
@@ -44,6 +46,7 @@ class Proveedor
         bool getRetIIBB();
         bool getRetGanancias();
         int  getIVA();//switch cuento entro
+        bool getEstadoProv();
         bool cargar();
         void mostrar();
         bool guardarEnDisco();

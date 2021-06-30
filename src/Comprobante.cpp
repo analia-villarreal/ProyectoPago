@@ -151,7 +151,6 @@ void Comprobante::cargar(int tipo)
 {
     setlocale(LC_ALL, "Spanish");
     int x;
-    float IVA;
     setTipo(tipo);
 
     if(getTipo()==1){
@@ -162,8 +161,8 @@ void Comprobante::cargar(int tipo)
     }
     //marco_comprobante();
 
-   gotoxy(1,4);
-   cout<<"FECHA CONTABILIZACIÓN"<<endl;
+
+    gotoxy(3,3);cout<<"FECHA CONTABILIZACIÓN"<<endl;
     _fechaContabilizacion.cargar();
 
     cout<<"FECHA COMPROBANTE"<<endl;
@@ -173,14 +172,13 @@ void Comprobante::cargar(int tipo)
     rand_proveedores();
 
     // llamar a la funcion randomProveedor() --> Mostrar un random de 5 proveedores con su categoria
-
+    cout<<"ELIGE UN PROVEEDOR"<<endl;
     cin>> _idProveedor;
 
-    cout<<buscarProveedor(_idProveedor)<<endl;
+    buscarNombProveedor(_idProveedor);
 
     cout<<"LETRA"<<endl;
-    cin.ignore();
-    cin.getline(_letra,1);
+    cin>> _letra;
     // Mostrar opciones
     cout<<"PV"<<endl;
     cin>> _pv;
@@ -188,37 +186,40 @@ void Comprobante::cargar(int tipo)
     cin>> _numFac;
     //cuenta contable del proveedor
     cout<<"CUENTA CONTABLE"<<endl;
+
     cout<<"CANTIDAD"<<endl;
     cin >> _cantidad;
     cout<<"PRECIO"<<endl;
     cin >> _PU;
-    cout<<"IVA"<<endl;
     float tasa;
     tasa=buscarAlicuota(_idProveedor);
-
+    float IVA;
 
     IVA=(((_PU*_cantidad)*tasa)/100);
     setIVA(IVA);
 
-    cout<<"IVA"<<endl;
-    _importeTotal=_pv*_cantidad;
-    cout<<"TOTAL"<< _importeTotal<< endl;
+    cout<<"IVA: "<<getIVA()<<endl;
+
+    _importeTotal=(_PU*_cantidad)+IVA;
+    cout<<"TOTAL: "<< _importeTotal<< endl;
 
     setEstado(true);
 
 }
 void Comprobante::mostrar()
 {
+    Proveedor reg;
+    reg.leerDeDisco(getIdProveedor());
 
-    cout<< "FECHA CONTABILIZACIÓN" << _fechaContabilizacion <<endl;
-    cout<< "FECHA COMPROBANTE" << _fechaFactura <<endl;
+    _fechaContabilizacion.mostrar();
+    _fechaComp.mostrar();
     cout<< "CODIGO PROVEEDOR" << getIdProveedor() <<endl;
-    cout<< "NOMBRE PROVEEDOR" << getRazonSocial() <<endl;
+    cout<< "NOMBRE PROVEEDOR" << reg.getRazonSocial() <<endl;
     cout<< "TIPO"<< _tipo <<endl;
     cout<< "COMPROBANTE" <<_letra << "-" << _pv << "-" << _numFac <<endl;
     cout<< "CUENTA CONTABLE" << _cuentaContable <<endl;
     cout<< "IMPORTE NETO" <<endl;
-    cout<< "TASA IVA" << getIva() <<endl;
+    cout<< "TASA IVA" << getIVA() <<endl;
     cout<< "TOTAL" << _importeTotal <<endl;
 
 }

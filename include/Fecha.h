@@ -19,6 +19,7 @@ class Fecha
         int getMes(){return _mes;}
         int getAnio(){return _anio;}
         void cargar();
+        void mostrar();
 
 };
 
