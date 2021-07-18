@@ -21,6 +21,7 @@ using namespace rlutil;
 
 int main()
 {
+    setColor(WHITE);
     setlocale(LC_ALL, "Spanish");
     srand(time(NULL));
     int opcion;
@@ -29,16 +30,17 @@ int main()
 
     do
     {
-        cout << "------PAGO A PROVEEDORES--------"<< endl;
-        cout << "---EMPECEMOS A PRACTICAR--------"<< endl;
-        cout << "   1. MENU COMPROBANTE          "<< endl;
-        cout << "   2. MENU PROVEEDOR            "<< endl;
-        cout << "   3.                           "<< endl;
-        cout << "   4.                           "<< endl;
-        cout << "   0. SALIR                     "<< endl;
-        cout << "--------------------------------"<< endl;
-        cout << "OPCION: ";
-        cin >> opcion;
+        gotoxy(40,5);cout << "----PAGO A PROVEEDORES--------"<< endl;
+        gotoxy(40,6);cout << "--EMPECEMOS A PRACTICAR--------"<< endl;
+        gotoxy(40,7);cout << "1. MENU COMPROBANTE          "<< endl;
+        gotoxy(40,8);cout << "2. MENU PROVEEDOR            "<< endl;
+        gotoxy(40,9);cout << "3. MENU PLAN DE CUENTAS      "<< endl;
+        gotoxy(40,10);cout <<"4. MENU LISTADOS Y CONSULTAS "<< endl;
+        gotoxy(40,11);cout <<"0. FIN DEL PROGRAMA          "<< endl;
+        gotoxy(40,12);cout <<"- SELECCIONE UNA OPCION: -   "<< endl;
+        gotoxy(40,13);cout <<"-------------------------------"<< endl;
+        gotoxy(40,14);cout<<"   > ";cin>>opcion;
+
 
         system("cls");
 

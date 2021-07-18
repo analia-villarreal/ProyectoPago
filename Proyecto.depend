@@ -90,7 +90,7 @@
 1624578365 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\proveedor.h
 	"Impuesto.h"
 
-1624579700 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\comprobante.cpp
+1626636277 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\comprobante.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -103,13 +103,14 @@
 	"Proveedor.h"
 	"Funciones.h"
 	"rlutil.h"
+	"Fecha.h"
 
 1624289852 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\comprobante.h
 	"Fecha.h"
 	"Impuesto.h"
 	"Proveedor.h"
 
-1624303896 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
+1626636928 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -141,9 +142,9 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1624580663 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
+1626633467 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
 
-1624580643 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
+1626633244 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
 	"Funciones.h"
 	<iostream>
 	<cstring>

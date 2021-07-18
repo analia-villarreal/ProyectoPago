@@ -11,6 +11,7 @@
 #include "Proveedor.h"
 #include "Funciones.h"
 #include "rlutil.h"
+#include "Fecha.h"
 
 using namespace std;
 using namespace rlutil;
@@ -149,24 +150,95 @@ bool Comprobante::getEstado()
 }
 void Comprobante::cargar(int tipo)
 {
+    marco_comprobante(1,2,80,29);
+
     setlocale(LC_ALL, "Spanish");
     int x;
     setTipo(tipo);
 
     if(getTipo()==1){
-        cout<<"ESTA CARGANDO UNA FACTURA" <<endl;
+        gotoxy(4,3);cout<<"ESTA CARGANDO UNA FACTURA" <<endl;
     }
     if(getTipo()==2){
-        cout<<"ESTA CARGANDO UNA NOTA DE CREDITO"<<endl;
+        gotoxy(4,3);cout<<"ESTA CARGANDO UNA NOTA DE CREDITO"<<endl;
     }
-    //marco_comprobante();
+
+    gotoxy(4,5);cout<<"FECHA CONTABILIZACIÓN"<<endl;
+
+    int d,m,a;
+    gotoxy(4,6);cout<<"DIA: "<<endl;
+    gotoxy(9,6);cin>>d;
+    while (d <= 0 || d >32)
+    {
+        gotoxy(5,7);cout << "INGRESE UN DIA ENTRE 1 Y 31" << endl;
+        gotoxy(5,7);cout << "DIA: " << endl;
+        cin >> d;
+    }
+
+    gotoxy(4,8);cout<<"MES: "<<endl;
+    gotoxy(9,8);cin>>m;
+    while (m <0 || m >13)
+    {
+       gotoxy(5,8);cout << "iNGRESE UN MES ENTRE 1 Y 12" << endl;
+       gotoxy(6,8);cout << "MES: " << endl;
+       gotoxy(6,);cin >> m;
+    }
+
+    gotoxy(4,9);cout<<"AÑO: "<<endl;
+    gotoxy(9,9);cin>>a;
+
+    while (a<1990)
+    {
+        cout << "iNGRESE UN AÑO MAYOR A 1990" << endl;
+        cout << "AÑO: " << endl;
+        cin >> a;
+    }
 
 
-    gotoxy(3,3);cout<<"FECHA CONTABILIZACIÓN"<<endl;
-    _fechaContabilizacion.cargar();
+    _fechaContabilizacion.setDia(d);
+    _fechaContabilizacion.setMes(m);
+    _fechaContabilizacion.setAnio(a);
 
     cout<<"FECHA COMPROBANTE"<<endl;
-    _fechaComp.cargar();
+
+        gotoxy(3,3);cout<<"FECHA CONTABILIZACIÓN"<<endl;
+
+    int dd,mm,aa;
+    cout<<"DIA"<<endl;
+    cin>>d;
+    while (dd <0 || dd >32)
+    {
+        gotoxy(4,4);cout << "iNGRESE UN DIA ENTRE 1 Y 31" << endl;
+        cout << "DIA: " << endl;
+        cin >> dd;
+    }
+
+    cout<<"MES"<<endl;
+    cin>>mm;
+    while (mm <0 || mm >13)
+    {
+        cout << "iNGRESE UN MES ENTRE 1 Y 12" << endl;
+        cout << "MES: " << endl;
+        cin >> mm;
+    }
+
+    cout<<"AÑO"<<endl;
+    cin>>aa;
+
+    while (aa<1990)
+    {
+        cout << "iNGRESE UN AÑO MAYOR A 1990" << endl;
+        cout << "AÑO: " << endl;
+        cin >> aa;
+    }
+
+
+    _fechaComp.setDia(dd);
+    _fechaComp.setMes(mm);
+    _fechaComp.setAnio(aa);
+
+
+
     cout<<"PROVEEDOR"<<endl;
 
     rand_proveedores();

@@ -21,17 +21,34 @@ using namespace std;
 
 using namespace rlutil;
 
-void marco_comprobante()
+void marco_comprobante(int x, int y, int ancho, int alto )
 {
-    setBackgroundColor(GREY);
-    setColor(BLUE);
-    int x;
-    for(x=1; x<=80; x++)
+
+    setBackgroundColor(BLACK);
+    cls();
+    setColor(LIGHTCYAN);
+    int i;
+    for(i=x; i<=x+ancho; i++)
     {
         setlocale(LC_ALL, "C");
-        gotoxy(x,2);
+        gotoxy(i,y);
+        printf("\xdB");
+        gotoxy(i,y+alto);
         printf("\xdB");
     }
+
+
+    for(i=y; i<=y+alto; i++)
+    {
+        setlocale(LC_ALL, "C");
+        gotoxy(x,i);
+        printf("\xdB");
+        gotoxy(x+ancho,i);
+        printf("\xdB");
+
+
+    }
+
 }
 
 int contarProveedores()
@@ -226,22 +243,22 @@ void menuComprobante()
     while(true)
     {
         system("cls");
-        cout << "-----MENU COMPROBANTES-----" << endl;
-        cout << "---------------------------" << endl;
-        cout << "1. ALTA COMPROBANTE"         << endl;
-        cout << "2. BAJA COMPROBANTE"         << endl;
-        cout << "3. LISTAR COMPROBANTES"      << endl;
-        cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
-        cout << "- SELECCIONE UNA OPCION: - " << endl;
-        cout << "---------------------------" << endl;
-        cin>>opc;
+        gotoxy(40,5);cout << "-----MENU COMPROBANTES-----" << endl;
+        gotoxy(40,6);cout << "---------------------------" << endl;
+        gotoxy(40,7);cout << "1. ALTA COMPROBANTE"         << endl;
+        gotoxy(40,8);cout << "2. BAJA COMPROBANTE"         << endl;
+        gotoxy(40,9);cout << "3. LISTAR COMPROBANTES"      << endl;
+        gotoxy(40,10);cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
+        gotoxy(40,11);cout << "- SELECCIONE UNA OPCION: - " << endl;
+        gotoxy(40,12);cout << "---------------------------" << endl;
+        gotoxy(40,13);cout<<" > ";cin>>opc;
         system("cls");
         switch(opc)
         {
         case 1:
             int tipoComp;
-            cout << "Factura: 1  Nota de Crédito: 2"<< endl;
-            cin>>tipoComp;
+            gotoxy(40,5);cout << "Factura: 1  Nota de Crédito: 2"<< endl;
+            gotoxy(40,6);cout<<" > ";cin>>tipoComp;
             system("cls");
             reg.cargar(tipoComp);
             if(reg.getEstado()==true)

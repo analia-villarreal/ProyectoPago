@@ -1,11 +1,13 @@
 #ifndef FUNCIONES_H
 #define FUNCIONES_H
 
-void marco_comprobante();
+void marco_comprobante(int,int,int,int);
 
 void menuComprobante();
 
 void menuProveedor();
+
+void menuPrincipal();
 
 void buscarNombProveedor(int);
 
