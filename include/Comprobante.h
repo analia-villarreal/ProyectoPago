@@ -58,8 +58,8 @@ class Comprobante
         bool leerDeDisco(int);
         bool guardarEnDisco();
         void guardarEnDisco(int);
-
-
+        void listarComprobantes();
+        void listarOrdenadoFechaConta();
 };
 
 #endif // COMPROBANTE_H

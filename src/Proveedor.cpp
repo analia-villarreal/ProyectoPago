@@ -10,6 +10,8 @@
 #include <conio.h>
 #include "rlutil.h"
 #include <clocale>
+#include "Reportes.h"
+
 
 using namespace std;
 

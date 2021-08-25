@@ -14,6 +14,7 @@
 #include "Proveedor.h"
 #include "rlutil.h"
 #include "Funciones.h"
+#include "Reportes.h"
 
 using namespace std;
 
@@ -32,14 +33,15 @@ int main()
     {
         gotoxy(40,5);cout << "----PAGO A PROVEEDORES--------"<< endl;
         gotoxy(40,6);cout << "--EMPECEMOS A PRACTICAR--------"<< endl;
-        gotoxy(40,7);cout << "1. MENU COMPROBANTE          "<< endl;
-        gotoxy(40,8);cout << "2. MENU PROVEEDOR            "<< endl;
-        gotoxy(40,9);cout << "3. MENU PLAN DE CUENTAS      "<< endl;
-        gotoxy(40,10);cout <<"4. MENU LISTADOS Y CONSULTAS "<< endl;
-        gotoxy(40,11);cout <<"0. FIN DEL PROGRAMA          "<< endl;
-        gotoxy(40,12);cout <<"- SELECCIONE UNA OPCION: -   "<< endl;
-        gotoxy(40,13);cout <<"-------------------------------"<< endl;
-        gotoxy(40,14);cout<<"   > ";cin>>opcion;
+        gotoxy(40,7);cout << "-------------------------------"<< endl;
+        gotoxy(40,8);cout << "1. MENU COMPROBANTE          "<< endl;
+        gotoxy(40,9);cout << "2. MENU PROVEEDOR            "<< endl;
+        gotoxy(40,10);cout << "3. MENU PLAN DE CUENTAS      "<< endl;
+        gotoxy(40,11);cout <<"4. MENU LISTADOS Y CONSULTAS "<< endl;
+        gotoxy(40,12);cout <<"0. FIN DEL PROGRAMA          "<< endl;
+        gotoxy(40,13);cout <<"- SELECCIONE UNA OPCION: -   "<< endl;
+        gotoxy(40,14);cout <<"-------------------------------"<< endl;
+        gotoxy(40,15);cout<<" > ";cin>>opcion;
 
 
         system("cls");
@@ -52,7 +54,7 @@ int main()
         case 2:menuProveedor();
             break;
         case 3: ;
-            //no tengo ninguna validacion todavia
+
             break;
         case 4:listarProveedores();
             break;

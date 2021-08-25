@@ -90,7 +90,7 @@
 1624578365 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\proveedor.h
 	"Impuesto.h"
 
-1626636277 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\comprobante.cpp
+1626919216 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\comprobante.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -104,13 +104,14 @@
 	"Funciones.h"
 	"rlutil.h"
 	"Fecha.h"
+	"Reportes.h"
 
-1624289852 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\comprobante.h
+1626912916 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\comprobante.h
 	"Fecha.h"
 	"Impuesto.h"
 	"Proveedor.h"
 
-1626636928 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
+1626913099 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -127,6 +128,7 @@
 	"Proveedor.h"
 	"rlutil.h"
 	"Funciones.h"
+	"Reportes.h"
 
 1604164361 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\rlutil.h
 	<iostream>
@@ -142,9 +144,9 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1626633467 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
+1626913587 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
 
-1626633244 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
+1626732757 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
 	"Funciones.h"
 	<iostream>
 	<cstring>
@@ -161,4 +163,6 @@
 	"PlanDeCuentas.h"
 	"Proveedor.h"
 	"rlutil.h"
+
+1626919787 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\reportes.h
 

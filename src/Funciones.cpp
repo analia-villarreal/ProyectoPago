@@ -99,6 +99,20 @@ bool buscarProveedor(int idProveedor)
 }
 
 
+char* buscarNombProv2(int idProveedor)
+{
+    Proveedor reg;
+
+    int pos;
+
+    pos=buscarPosProveedor(idProveedor);
+
+    reg.leerDeDisco(pos);
+
+   return reg.getRazonSocial();
+
+}
+
 void buscarNombProveedor(int idProveedor)
 {
     Proveedor reg;
@@ -109,9 +123,14 @@ void buscarNombProveedor(int idProveedor)
 
     reg.leerDeDisco(pos);
 
-    cout<<reg.getRazonSocial()<<endl;
+   cout<<""<<reg.getRazonSocial()<<endl;
+
 
 }
+
+
+
+
 
 
 bool sinRepetidos(int n, int vec[])
@@ -163,7 +182,7 @@ void rand_proveedores()
         pos=buscarPosProveedor(vecNum[j]);
 
         reg.leerDeDisco(pos);
-
+        rlutil::locate(4, 26+j);
         cout<<vecNum[j]<<"-"<< reg.getRazonSocial()<<endl;
 
     }
@@ -265,23 +284,26 @@ void menuComprobante()
             {
                 if(reg.guardarEnDisco()==true)
                 {
-                    cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
+                   gotoxy(4,41);cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
+                   resetColor();
                 }
                 else
                 {
-                    cout<<"NO SE PUDO GRABAR EL REGISTRO"<<endl;
+                    gotoxy(4,41);cout<<"NO SE PUDO GRABAR EL REGISTRO"<<endl;
+                    resetColor();
                 }
             }
             else
             {
                 cout<<"ERROR DE DATOS"<<endl;
             }
-            system("pause");
+            gotoxy(4,42);system("pause");
             break;
         case 2:
         //BAJA COMPROBANTE;
         case 3:
-            listarComprobantes();
+            reg.listarComprobantes();
+            system("pause");
             break;
         case 0:
             return;

@@ -12,6 +12,7 @@
 #include "Funciones.h"
 #include "rlutil.h"
 #include "Fecha.h"
+#include "Reportes.h"
 
 using namespace std;
 using namespace rlutil;
@@ -150,7 +151,7 @@ bool Comprobante::getEstado()
 }
 void Comprobante::cargar(int tipo)
 {
-    marco_comprobante(1,2,80,29);
+    marco_comprobante(1,2,80,48);
 
     setlocale(LC_ALL, "Spanish");
     int x;
@@ -170,28 +171,28 @@ void Comprobante::cargar(int tipo)
     gotoxy(9,6);cin>>d;
     while (d <= 0 || d >32)
     {
-        gotoxy(5,7);cout << "INGRESE UN DIA ENTRE 1 Y 31" << endl;
-        gotoxy(5,7);cout << "DIA: " << endl;
-        cin >> d;
+        gotoxy(5,7);cout << "Ingrese un dia entre 1 y 31" << endl;
+        gotoxy(5,8);cout << "DIA: " << endl;
+        gotoxy(10,8);cin >> d;
     }
 
-    gotoxy(4,8);cout<<"MES: "<<endl;
-    gotoxy(9,8);cin>>m;
-    while (m <0 || m >13)
+    gotoxy(4,9);cout<<"MES: "<<endl;
+    gotoxy(9,9);cin>>m;
+    while (m <=0 || m >13)
     {
-       gotoxy(5,8);cout << "iNGRESE UN MES ENTRE 1 Y 12" << endl;
-       gotoxy(6,8);cout << "MES: " << endl;
-       gotoxy(6,);cin >> m;
+       gotoxy(5,10);cout << "Ingrese un mes entre 1 Y 12" << endl;
+       gotoxy(5,11);cout << "MES: " << endl;
+       gotoxy(9,11);cin >> m;
     }
 
-    gotoxy(4,9);cout<<"AÑO: "<<endl;
-    gotoxy(9,9);cin>>a;
+    gotoxy(4,12);cout<<"AÑO: "<<endl;
+    gotoxy(9,12);cin>>a;
 
     while (a<1990)
     {
-        cout << "iNGRESE UN AÑO MAYOR A 1990" << endl;
-        cout << "AÑO: " << endl;
-        cin >> a;
+        gotoxy(5,13);cout << "iNGRESE UN AÑO MAYOR A 1990" << endl;
+        gotoxy(5,14);cout << "AÑO: " << endl;
+        gotoxy(9,14);cin >> a;
     }
 
 
@@ -199,70 +200,65 @@ void Comprobante::cargar(int tipo)
     _fechaContabilizacion.setMes(m);
     _fechaContabilizacion.setAnio(a);
 
-    cout<<"FECHA COMPROBANTE"<<endl;
-
-        gotoxy(3,3);cout<<"FECHA CONTABILIZACIÓN"<<endl;
+    gotoxy(4,15);cout<<"FECHA COMPROBANTE"<<endl;
 
     int dd,mm,aa;
-    cout<<"DIA"<<endl;
-    cin>>d;
-    while (dd <0 || dd >32)
+    gotoxy(4,16);cout<<"DIA: "<<endl;
+    gotoxy(9,16);cin>>dd;
+    while (dd <= 0 || dd >32)
     {
-        gotoxy(4,4);cout << "iNGRESE UN DIA ENTRE 1 Y 31" << endl;
-        cout << "DIA: " << endl;
-        cin >> dd;
+        gotoxy(4,17);cout << "Ingrese un dia entre 1 Y 31" << endl;
+        gotoxy(4,18);cout << "DIA: " << endl;
+        gotoxy(9,18);cin >> dd;
     }
 
-    cout<<"MES"<<endl;
-    cin>>mm;
-    while (mm <0 || mm >13)
+    gotoxy(4,19);cout<<"MES: "<<endl;
+    gotoxy(9,19);cin>>mm;
+    while (mm <=0 || mm >13)
     {
-        cout << "iNGRESE UN MES ENTRE 1 Y 12" << endl;
-        cout << "MES: " << endl;
-        cin >> mm;
+        gotoxy(4,20);cout << "Ingrese el mes de  1 Y 12" << endl;
+        gotoxy(4,21);cout << "MES: "<< endl;
+        gotoxy(9,21);cin >> mm;
     }
 
-    cout<<"AÑO"<<endl;
-    cin>>aa;
+    gotoxy(4,22);cout<<"AÑO: "<<endl;
+    gotoxy(9,22);cin>>aa;
 
     while (aa<1990)
     {
-        cout << "iNGRESE UN AÑO MAYOR A 1990" << endl;
-        cout << "AÑO: " << endl;
-        cin >> aa;
+        gotoxy(4,23);cout << "Ingrese un año mayor a 1990" << endl;
+        gotoxy(4,24);cout << "AÑO: "<< endl;
+        gotoxy(9,24);cin >> aa;
     }
-
 
     _fechaComp.setDia(dd);
     _fechaComp.setMes(mm);
     _fechaComp.setAnio(aa);
 
+    gotoxy(4,25);cout<<"PROVEEDOR"<<endl;
 
-
-    cout<<"PROVEEDOR"<<endl;
-
-    rand_proveedores();
+    gotoxy(4,26);rand_proveedores();
 
     // llamar a la funcion randomProveedor() --> Mostrar un random de 5 proveedores con su categoria
-    cout<<"ELIGE UN PROVEEDOR"<<endl;
-    cin>> _idProveedor;
+    gotoxy(4,32);cout<<"ELIGE UN PROVEEDOR"<<endl;
+    gotoxy(4,33);cin>> _idProveedor;
 
-    buscarNombProveedor(_idProveedor);
+    gotoxy(4,35);buscarNombProveedor(_idProveedor);
 
-    cout<<"LETRA"<<endl;
-    cin>> _letra;
+    gotoxy(4,36);cout<<"LETRA: "<<endl;
+    gotoxy(11,36);cin>> _letra;
     // Mostrar opciones
-    cout<<"PV"<<endl;
-    cin>> _pv;
-    cout<<"NUMERO"<<endl;
-    cin>> _numFac;
+    gotoxy(13,36);cout<<"PV: "<<endl;
+    gotoxy(17,36);cin>> _pv;
+    gotoxy(19,36);cout<<"NUMERO: "<<endl;
+    gotoxy(27,36);cin>> _numFac;
     //cuenta contable del proveedor
-    cout<<"CUENTA CONTABLE"<<endl;
-
-    cout<<"CANTIDAD"<<endl;
-    cin >> _cantidad;
-    cout<<"PRECIO"<<endl;
-    cin >> _PU;
+    gotoxy(4,37);cout<<"CUENTA CONTABLE"<<endl;
+    //gotoxy(4,38);
+    gotoxy(4,39);cout<<"CANTIDAD: "<<endl;
+    gotoxy(14,39);cin >> _cantidad;
+    gotoxy(20,39);cout<<"PRECIO: $ "<<endl;
+    gotoxy(30,39);cin >> _PU;
     float tasa;
     tasa=buscarAlicuota(_idProveedor);
     float IVA;
@@ -270,45 +266,51 @@ void Comprobante::cargar(int tipo)
     IVA=(((_PU*_cantidad)*tasa)/100);
     setIVA(IVA);
 
-    cout<<"IVA: "<<getIVA()<<endl;
+    gotoxy(37,39);cout<<"IVA: $  "<<getIVA()<<endl;
 
     _importeTotal=(_PU*_cantidad)+IVA;
-    cout<<"TOTAL: "<< _importeTotal<< endl;
+    gotoxy(60,39);cout<<"TOTAL: $ "<< _importeTotal<< endl;
 
     setEstado(true);
-
+    resetColor();
 }
+
 void Comprobante::mostrar()
 {
-    Proveedor reg;
-    reg.leerDeDisco(getIdProveedor());
 
+    char nom[45]={};
+    strcpy(nom,buscarNombProv2(_idProveedor));
+    cout<< "--------------------------------------" << endl;
+    cout<< "        LISTADO COMPROBANTES          " << endl;
+    cout<< "--------------------------------------" << endl;
+
+    cout<< " FECHA CONT ";
     _fechaContabilizacion.mostrar();
     _fechaComp.mostrar();
-    cout<< "CODIGO PROVEEDOR" << getIdProveedor() <<endl;
-    cout<< "NOMBRE PROVEEDOR" << reg.getRazonSocial() <<endl;
+    cout<< "CODIGO PROVEEDOR" << _idProveedor <<endl;
+    cout<< "NOMBRE PROVEEDOR" << nom <<endl;
     cout<< "TIPO"<< _tipo <<endl;
-    cout<< "COMPROBANTE" <<_letra << "-" << _pv << "-" << _numFac <<endl;
-    cout<< "CUENTA CONTABLE" << _cuentaContable <<endl;
-    cout<< "IMPORTE NETO" <<endl;
-    cout<< "TASA IVA" << getIVA() <<endl;
-    cout<< "TOTAL" << _importeTotal <<endl;
+    cout<< "COMPROBANTE: " <<_letra << " - " << _pv << " - " << _numFac <<endl;
+    cout<< "CUENTA CONTABLE: " << _cuentaContable <<endl;
+    cout<< "IMPORTE NETO: " <<endl;
+    cout<< "TASA IVA: " << getIVA() <<endl;
+    cout<< "TOTAL: " << _importeTotal <<endl;
 
 }
-void listarComprobantes()
+
+void Comprobante::listarComprobantes()
 {
     int i=0;
-    Proveedor reg;
 
-    while(reg.leerDeDisco(i))
+    while(leerDeDisco(i))
     {
-        reg.mostrar();
+        //rlutil::locate(4, 26+i);
+        mostrar();
         cout << endl;
         i++;
     }
 
 }
-
 
 bool Comprobante::guardarEnDisco()
 {

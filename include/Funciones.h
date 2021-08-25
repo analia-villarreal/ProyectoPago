@@ -31,6 +31,8 @@ bool soloNumeros(const char *);
 
 float buscarAlicuota(int);
 
+char* buscarNombProv2(int);
 
+int contarProveedores();
 
 #endif // FUNCIONES_H

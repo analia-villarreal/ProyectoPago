@@ -42,6 +42,7 @@
 		<Unit filename="include/OrdenDePago.h" />
 		<Unit filename="include/PlanDeCuentas.h" />
 		<Unit filename="include/Proveedor.h" />
+		<Unit filename="include/Reportes.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Comprobante.cpp" />
 		<Unit filename="src/Fecha.cpp" />
@@ -51,6 +52,7 @@
 		<Unit filename="src/OrdenDePago.cpp" />
 		<Unit filename="src/PlanDeCuentas.cpp" />
 		<Unit filename="src/Proveedor.cpp" />
+		<Unit filename="src/Reportes.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
