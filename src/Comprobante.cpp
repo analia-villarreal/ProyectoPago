@@ -85,7 +85,7 @@ void Comprobante::setImporteTotal(float importe)
 {
     _importeTotal=importe;
 }
-void Comprobante::setEstado(bool estado)
+void Comprobante::setEstado(int estado)
 {
     _estado=estado;
 }
@@ -145,7 +145,7 @@ float Comprobante::getImporteTotal()
 {
     return _importeTotal;
 }
-bool Comprobante::getEstado()
+int  Comprobante::getEstado()
 {
     return _estado;
 }
@@ -271,7 +271,7 @@ void Comprobante::cargar(int tipo)
     _importeTotal=(_PU*_cantidad)+IVA;
     gotoxy(60,39);cout<<"TOTAL: $ "<< _importeTotal<< endl;
 
-    setEstado(true);
+    setEstado(1);
     resetColor();
 }
 

@@ -9,6 +9,8 @@ void menuProveedor();
 
 void menuPrincipal();
 
+void menuPlandeCuentas();
+
 void buscarNombProveedor(int);
 
 int buscarPosProveedor(int);

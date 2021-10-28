@@ -129,10 +129,6 @@ void buscarNombProveedor(int idProveedor)
 }
 
 
-
-
-
-
 bool sinRepetidos(int n, int vec[])
 {
 
@@ -370,7 +366,60 @@ void menuProveedor()
 
 }
 
+void menuPlandeCuentas()
+{
+    PlanDeCuentas reg2;
+    int opc;
+    while(true)
+    {
+        system("cls");
+        cout << "--------MENU PLAN DE CUENTAS--------" << endl;
+        cout << "------------------------------------" << endl;
+        cout << "1. ALTA CUENTA CONTABLE             " << endl;
+        cout << "2. DESACTIVAR CUENTA CONTABLE       " << endl;
+        cout << "3. LISTAR PLAN DE CUENTAS           " << endl;
+        cout << "0. VOLVER AL MENU PRINCIPAL         " << endl;
+        cout << "- SELECCIONE UNA OPCION: -          " << endl;
+        cout << "------------------------------------" << endl;
+        cin>>opc;
+        system("cls");
+        switch(opc)
+        {
+        case 1:
+            reg2.cargar();
+            if(reg2.getEstadoPlan()==true)
+            {
+                if(reg2.guardarEnDisco()==true)
+                {
+                    cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
+                }
+                else
+                {
+                    cout<<"NO SE PUDO GRABAR EL REGISTRO"<<endl;
+                }
+            }
+            else
+            {
+                cout<<"ERROR DE DATOS"<<endl;
+            }
+            system("pause");
+            break;
+        case 2:
+        //BAJA PROVEEDOR;
+        case 3:
+            reg2.listarPlanDeCuentas();
+            system("pause");
+            break;
+        case 0:
+            return;
+            break;
+        default:
+            cout<<" OPCION INCORRECTA"<<endl;
+            break;
+        }
+    }
 
+}
 
 
 

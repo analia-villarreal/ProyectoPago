@@ -49,16 +49,13 @@ int main()
         switch(opcion)
         {
         case 1:menuComprobante();
-
-        break;
+            break;
         case 2:menuProveedor();
             break;
-        case 3: ;
-
+        case 3:menuPlandeCuentas() ;
             break;
         case 4:listarProveedores();
             break;
-
         }
         system("pause");
         system("cls");

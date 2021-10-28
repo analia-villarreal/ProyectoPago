@@ -16,11 +16,12 @@
 #include "PlanDeCuentas.h"
 #include "Proveedor.h"
 #include "rlutil.h"
-//
-//
-//using namespace std;
-//
-//using namespace rlutil;
+
+
+using namespace std;
+using namespace rlutil;
+
+
 //
 //int contarComprobantes(){
 //    int bytes, cr;
