@@ -15,6 +15,7 @@
 #include "PlanDeCuentas.h"
 #include "Proveedor.h"
 #include "rlutil.h"
+#include "Reportes.h"
 
 
 using namespace std;
@@ -368,7 +369,7 @@ void menuProveedor()
 
 void menuPlandeCuentas()
 {
-    PlanDeCuentas reg2;
+    PlanDeCuentas obj;
     int opc;
     while(true)
     {
@@ -386,10 +387,10 @@ void menuPlandeCuentas()
         switch(opc)
         {
         case 1:
-            reg2.cargar();
-            if(reg2.getEstadoPlan()==true)
+            obj.cargar();
+            if(obj.getEstadoPlan()==true)
             {
-                if(reg2.guardarEnDisco()==true)
+                if(obj.guardarEnDisco()==true)
                 {
                     cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
                 }
@@ -407,7 +408,7 @@ void menuPlandeCuentas()
         case 2:
         //BAJA PROVEEDOR;
         case 3:
-            reg2.listarPlanDeCuentas();
+            obj.listarPlanDeCuentas();
             system("pause");
             break;
         case 0:

@@ -1,6 +1,7 @@
 #ifndef PLANDECUENTAS_H
 #define PLANDECUENTAS_H
 
+#include "Funciones.h"
 
 class PlanDeCuentas
 {
@@ -10,18 +11,17 @@ class PlanDeCuentas
         bool _estado;
 
     public:
-        PlanDeCuentas();
         void setCuentaContable(int);
-        void setDescripcionCuenta(char*);
-        void setEstado(bool);
+        void setDescripcionCuenta(const char*);
+        void setEstadoPlan(bool);
         int getCuentaContable();
-        char *getDescripcionCuenta();
+        const char *getDescripcionCuenta();
         bool getEstadoPlan();
         void cargar();
         void mostrar();
-        void listarPlanDeCuentas();
         bool guardarEnDisco();
         bool leerDeDisco(int);
+        void listarPlanDeCuentas();
 
 };
 

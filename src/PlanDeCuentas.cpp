@@ -21,12 +21,6 @@ using namespace std;
 using namespace rlutil;
 
 
-PlanDeCuentas::PlanDeCuentas()
-{
-    //ctor
-}
-
-
 void PlanDeCuentas::setCuentaContable(int cuenta)
 {
     _cuentaContable=cuenta;

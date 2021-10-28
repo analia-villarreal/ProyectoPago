@@ -52,7 +52,7 @@ int main()
             break;
         case 2:menuProveedor();
             break;
-        case 3:menuPlandeCuentas() ;
+        case 3:menuPlandeCuentas();
             break;
         case 4:listarProveedores();
             break;

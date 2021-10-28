@@ -1,16 +1,22 @@
 #include "Proveedor.h"
+#include "MediosDePagos.h"
+#include "OrdenDePago.h"
+#include "Comprobante.h"
+#include "Fecha.h"
 #include "Impuesto.h"
 #include "PlanDeCuentas.h"
+#include "rlutil.h"
 #include "Funciones.h"
+#include "Reportes.h"
+
+
 
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
 #include <cstdio>
 #include <conio.h>
-#include "rlutil.h"
 #include <clocale>
-#include "Reportes.h"
 
 
 using namespace std;
