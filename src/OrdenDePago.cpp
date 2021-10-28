@@ -73,10 +73,7 @@ int OrdenDePago::getIdProveedor() {
 
     return _idProveedor;
 }
-Proveedor OrdenDePago::getRazonSocial(int pos) {
 
-    return _razonSocial;
-}
 int OrdenDePago::getNumComp() {
 
     return _numComp;
@@ -97,7 +94,7 @@ float OrdenDePago::getImporteTotal() {
 
     return _importeTotal;
 }
-int OrdenDePago::getEstado() {
+bool OrdenDePago::getEstadoOP() {
 
     return _estadoOP;
 }
@@ -147,8 +144,8 @@ void OrdenDePago::guardarEnDisco(int pos) {
     if (p == NULL){
         return;
     }
-    fseek(p, sizeof(Comprobante)*pos, SEEK_SET);
-    guardo = fwrite(this, sizeof(Comprobante), 1, p);
+    fseek(p, sizeof(OrdenDePago)*pos, SEEK_SET);
+    guardo = fwrite(this, sizeof(OrdenDePago), 1, p);
     fclose(p);
     return;;
 

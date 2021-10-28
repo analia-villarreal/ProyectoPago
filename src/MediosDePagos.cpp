@@ -21,7 +21,7 @@ MediosDePagos::MediosDePagos()
     //ctor
 }
 
-void setIdMp(int id ){
+void MediosDePagos::setIdMp(int id ){
 
     _idMp=id;
 
@@ -95,21 +95,7 @@ void MediosDePagos::guardarEnDisco(int pos){
     fclose(p);
     return;
 }
-bool MediosDePagos::leerDeDisco(){
 
-    bool lectura;
-    FILE *p;
-    p = fopen("mediosdepago.dat", "rb");
-    if (p == NULL)
-    {
-        return false;
-    }
-    fseek(p, sizeof(MediosDePagos)*pos, SEEK_SET);
-    lectura = fread(this, sizeof(MediosDePagos), 1, p);
-    fclose(p);
-    return lectura;
-
-}
 bool MediosDePagos::leerDeDisco(int pos){
 
     bool lectura;

@@ -25,11 +25,11 @@ void PlanDeCuentas::setCuentaContable(int cuenta)
 {
     _cuentaContable=cuenta;
 }
-void PlanDeCuentas::setDescripcionCuenta(char* descCuenta )
+void PlanDeCuentas::setDescripcionCuenta(const char* descCuenta)
 {
     strcpy(_descripcionCuenta,descCuenta);
 }
-void PlanDeCuentas::setEstado(bool estado)
+void PlanDeCuentas::setEstadoPlan(bool estado)
 {
     _estado=estado;
 }
@@ -37,7 +37,7 @@ int PlanDeCuentas::getCuentaContable()
 {
     return _cuentaContable;
 }
-char *PlanDeCuentas::getDescripcionCuenta()
+const char *PlanDeCuentas::getDescripcionCuenta()
 {
     return _descripcionCuenta;
 }
@@ -57,7 +57,7 @@ void PlanDeCuentas::cargar()
     cout<<"DESCRIPCION    "<<endl;
     cin>> desc;
     strcpy(_descripcionCuenta, desc);
-    setEstado(true);
+    setEstadoPlan(true);
 }
 void PlanDeCuentas::mostrar()
 {

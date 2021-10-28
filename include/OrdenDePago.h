@@ -1,6 +1,10 @@
 #ifndef ORDENDEPAGO_H
 #define ORDENDEPAGO_H
 
+#include "Fecha.h"
+#include "Impuesto.h"
+#include "Proveedor.h"
+#include "MediosDePagos.h"
 
 class OrdenDePago
 {
@@ -31,8 +35,9 @@ class OrdenDePago
         void setImporteAPagar(float);
         void setImporteTotal(float);
         void setFormaDePago(MediosDePagos);
-        void setEstado(bool);
+        void setEstadoOP(bool);
         int getIdOP();
+        int getTipoOP();
         Fecha getFechaContabilizacion();
         int getIdProveedor();
         Proveedor getRazonSocial(int);

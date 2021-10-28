@@ -22,7 +22,6 @@ class MediosDePagos
         void mostrar();
         bool guardarEnDisco();
         void guardarEnDisco(int);
-        bool leerDeDisco();
         bool leerDeDisco(int);
 
 
