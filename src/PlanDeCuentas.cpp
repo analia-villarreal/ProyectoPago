@@ -5,6 +5,8 @@
 #include <cstdio>
 #include <conio.h>
 #include <ctime>
+#include <iomanip>
+
 #include "Comprobante.h"
 #include "Fecha.h"
 #include "Impuesto.h"
@@ -61,10 +63,10 @@ void PlanDeCuentas::cargar()
 }
 void PlanDeCuentas::mostrar()
 {
-    gotoxy(2,3);
-    cout<< _cuentaContable;
-    gotoxy(25,3);
-    cout<<_descripcionCuenta;
+    cout << left;
+    cout<< setw(16) << _cuentaContable;
+    cout<< setw(20) <<_descripcionCuenta;
+    cout<<endl;
 
 
 }
@@ -99,15 +101,14 @@ bool PlanDeCuentas::leerDeDisco(int pos)
 
 void PlanDeCuentas::listarPlanDeCuentas()
 {
-    PlanDeCuentas obj;
-    gotoxy(2,2);
-    cout<<"CODIGO CUENTA ";
-    gotoxy(25,2);
-    cout<<"DESCRIPCION CUENTA ";
+    cout << left;
+    cout<< setw(16) <<"CODIGO CUENTA ";
+    cout<< setw(20) <<"DESCRIPCION CUENTA ";
+    cout<<endl;
     int pos=0;
-    while(obj.leerDeDisco(pos)==true)
+    while(leerDeDisco(pos)==true)
     {
-        obj.mostrar();
+        mostrar();
         pos++;
     }
     cout<<endl;

@@ -8,6 +8,7 @@
 #include "rlutil.h"
 #include <cstdio>
 #include <conio.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -71,6 +72,6 @@ void Fecha::cargar()
 void Fecha::mostrar()
 {
 
-    cout << _dia << "/" << _mes << "/" << _anio << endl;
+    cout << setw(23) << _dia << "/" << _mes << "/" << _anio;
 
 }

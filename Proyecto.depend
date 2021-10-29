@@ -30,7 +30,7 @@
 
 1635462319 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\mediosdepagos.h
 
-1635461274 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\fecha.cpp
+1635466130 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\fecha.cpp
 	"Fecha.h"
 	"Proveedor.h"
 	"Impuesto.h"
@@ -40,6 +40,7 @@
 	"rlutil.h"
 	<cstdio>
 	<conio.h>
+	<iomanip>
 
 1624301290 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\fecha.h
 	<time.h>
@@ -64,7 +65,7 @@
 	"Proveedor.h"
 	"MediosDePagos.h"
 
-1635260828 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\plandecuentas.cpp
+1635464636 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\plandecuentas.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -72,6 +73,7 @@
 	<cstdio>
 	<conio.h>
 	<ctime>
+	<iomanip>
 	"Comprobante.h"
 	"Fecha.h"
 	"Impuesto.h"
@@ -86,7 +88,7 @@
 1635461837 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\plandecuentas.h
 	"Funciones.h"
 
-1635461837 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\proveedor.cpp
+1635464971 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\proveedor.cpp
 	"Proveedor.h"
 	"MediosDePagos.h"
 	"OrdenDePago.h"
@@ -97,6 +99,7 @@
 	"rlutil.h"
 	"Funciones.h"
 	"Reportes.h"
+	<iomanip>
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -128,7 +131,7 @@
 	"Impuesto.h"
 	"Proveedor.h"
 
-1635461837 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
+1635464563 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -136,6 +139,7 @@
 	<cstdio>
 	<conio.h>
 	<ctime>
+	<iomanip>
 	"Comprobante.h"
 	"Fecha.h"
 	"Impuesto.h"
@@ -163,7 +167,7 @@
 
 1635038652 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
 
-1635461837 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
+1635464971 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
 	"Funciones.h"
 	<iostream>
 	<cstring>
@@ -172,6 +176,7 @@
 	<cstdio>
 	<conio.h>
 	<ctime>
+	<iomanip>
 	"Comprobante.h"
 	"Fecha.h"
 	"Impuesto.h"

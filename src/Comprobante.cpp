@@ -4,6 +4,7 @@
 #include <conio.h>
 #include <clocale>
 #include <cstdio>
+#include <iomanip>
 
 #include "Comprobante.h"
 #include "Impuesto.h"
@@ -265,11 +266,12 @@ void Comprobante::cargar(int tipo)
 
     IVA=(((_PU*_cantidad)*tasa)/100);
     setIVA(IVA);
-
-    gotoxy(37,39);cout<<"IVA: $  "<<getIVA()<<endl;
+    cout << fixed;
+    gotoxy(37,39);cout<<"IVA: $  "<< setprecision(2) <<getIVA()<<endl;
 
     _importeTotal=(_PU*_cantidad)+IVA;
-    gotoxy(60,39);cout<<"TOTAL: $ "<< _importeTotal<< endl;
+    cout << fixed;
+    gotoxy(60,39);cout<<"TOTAL: $ "<< setprecision(2) <<_importeTotal<< endl;
 
     setEstado(1);
     resetColor();
@@ -280,36 +282,47 @@ void Comprobante::mostrar()
 
     char nom[45]={};
     strcpy(nom,buscarNombProv2(_idProveedor));
-    cout<< "--------------------------------------" << endl;
-    cout<< "        LISTADO COMPROBANTES          " << endl;
-    cout<< "--------------------------------------" << endl;
-
-    cout<< " FECHA CONT ";
+    cout << left;
     _fechaContabilizacion.mostrar();
     _fechaComp.mostrar();
-    cout<< "CODIGO PROVEEDOR" << _idProveedor <<endl;
-    cout<< "NOMBRE PROVEEDOR" << nom <<endl;
-    cout<< "TIPO"<< _tipo <<endl;
-    cout<< "COMPROBANTE: " <<_letra << " - " << _pv << " - " << _numFac <<endl;
-    cout<< "CUENTA CONTABLE: " << _cuentaContable <<endl;
-    cout<< "IMPORTE NETO: " <<endl;
-    cout<< "TASA IVA: " << getIVA() <<endl;
-    cout<< "TOTAL: " << _importeTotal <<endl;
+    cout<< setw(18) <<  _idProveedor;
+    cout<< setw(30) << nom;
+    cout<< setw(6) << _tipo;
+    cout<< setw(13) << _numFac;
+    cout<< setw(16) << _cuentaContable;
+    cout<< setw(14) <<"IMPORTE NETO";
+    cout<< setw(10) << getIVA();
+    cout<< setw(10) << _importeTotal;
+    cout << endl;
 
 }
 
 void Comprobante::listarComprobantes()
 {
     int i=0;
+    cout << left;
+    cout<< "--------------------------------------" << endl;
+    cout<< "        LISTADO COMPROBANTES          " << endl;
+    cout<< "--------------------------------------" << endl;
+
+    cout<< setw(23) <<" FECHA CONTABILIZACION ";
+    cout<< setw(23) <<" FECHA COMPROBANTE ";
+    cout<< setw(18) <<" CODIGO PROVEEDOR ";
+    cout<< setw(30) <<" NOMBRE PROVEEDOR ";
+    cout<< setw(6) << " TIPO ";
+    cout<< setw(13) << " COMPROBANTE ";
+    cout<< setw(16) <<" CUENTA CONTABLE ";
+    cout<< setw(14) <<" IMPORTE NETO ";
+    cout<< setw(10) <<" TASA IVA ";
+    cout<< setw(10) <<" TOTAL ";
+    cout << endl;
 
     while(leerDeDisco(i))
     {
-        //rlutil::locate(4, 26+i);
         mostrar();
-        cout << endl;
         i++;
     }
-
+    cout << endl;
 }
 
 bool Comprobante::guardarEnDisco()

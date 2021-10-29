@@ -10,7 +10,7 @@
 #include "Reportes.h"
 
 
-
+#include <iomanip>
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
