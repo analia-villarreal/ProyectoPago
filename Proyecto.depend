@@ -110,13 +110,14 @@
 1624578365 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\proveedor.h
 	"Impuesto.h"
 
-1635461274 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\comprobante.cpp
+1635466831 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\comprobante.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
 	<conio.h>
 	<clocale>
 	<cstdio>
+	<iomanip>
 	"Comprobante.h"
 	"Impuesto.h"
 	"PlanDeCuentas.h"

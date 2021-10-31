@@ -94,15 +94,140 @@ float OrdenDePago::getImporteTotal() {
 
     return _importeTotal;
 }
-bool OrdenDePago::getEstadoOP() {
+bool OrdenDePago::getEstadoOP(){
 
     return _estadoOP;
 }
-void OrdenDePago::cargar(int tipo) {
+/*void OrdenDePago::cargar(int tipo) {
+
+    marco_comprobante(1,2,80,48);
+
+    setlocale(LC_ALL, "Spanish");
+    int x;
+    setTipo(tipoOP);
+
+    if(getTipoOP()==1){
+        gotoxy(4,3);cout<<"ESTA CARGANDO UNA FACTURA" <<endl;
+    }
+    if(getTipo()==2){
+        gotoxy(4,3);cout<<"ESTA CARGANDO UNA NOTA DE CREDITO"<<endl;
+    }
+
+    gotoxy(4,5);cout<<"FECHA CONTABILIZACIÓN"<<endl;
+
+    int d,m,a;
+    gotoxy(4,6);cout<<"DIA: "<<endl;
+    gotoxy(9,6);cin>>d;
+    while (d <= 0 || d >32)
+    {
+        gotoxy(5,7);cout << "Ingrese un dia entre 1 y 31" << endl;
+        gotoxy(5,8);cout << "DIA: " << endl;
+        gotoxy(10,8);cin >> d;
+    }
+
+    gotoxy(4,9);cout<<"MES: "<<endl;
+    gotoxy(9,9);cin>>m;
+    while (m <=0 || m >13)
+    {
+       gotoxy(5,10);cout << "Ingrese un mes entre 1 Y 12" << endl;
+       gotoxy(5,11);cout << "MES: " << endl;
+       gotoxy(9,11);cin >> m;
+    }
+
+    gotoxy(4,12);cout<<"AÑO: "<<endl;
+    gotoxy(9,12);cin>>a;
+
+    while (a<1990)
+    {
+        gotoxy(5,13);cout << "iNGRESE UN AÑO MAYOR A 1990" << endl;
+        gotoxy(5,14);cout << "AÑO: " << endl;
+        gotoxy(9,14);cin >> a;
+    }
+
+
+    _fechaContabilizacion.setDia(d);
+    _fechaContabilizacion.setMes(m);
+    _fechaContabilizacion.setAnio(a);
+
+    gotoxy(4,15);cout<<"FECHA COMPROBANTE"<<endl;
+
+    int dd,mm,aa;
+    gotoxy(4,16);cout<<"DIA: "<<endl;
+    gotoxy(9,16);cin>>dd;
+    while (dd <= 0 || dd >32)
+    {
+        gotoxy(4,17);cout << "Ingrese un dia entre 1 Y 31" << endl;
+        gotoxy(4,18);cout << "DIA: " << endl;
+        gotoxy(9,18);cin >> dd;
+    }
+
+    gotoxy(4,19);cout<<"MES: "<<endl;
+    gotoxy(9,19);cin>>mm;
+    while (mm <=0 || mm >13)
+    {
+        gotoxy(4,20);cout << "Ingrese el mes de  1 Y 12" << endl;
+        gotoxy(4,21);cout << "MES: "<< endl;
+        gotoxy(9,21);cin >> mm;
+    }
+
+    gotoxy(4,22);cout<<"AÑO: "<<endl;
+    gotoxy(9,22);cin>>aa;
+
+    while (aa<1990)
+    {
+        gotoxy(4,23);cout << "Ingrese un año mayor a 1990" << endl;
+        gotoxy(4,24);cout << "AÑO: "<< endl;
+        gotoxy(9,24);cin >> aa;
+    }
+
+    _fechaComp.setDia(dd);
+    _fechaComp.setMes(mm);
+    _fechaComp.setAnio(aa);
+
+    gotoxy(4,25);cout<<"PROVEEDOR"<<endl;
+
+    gotoxy(4,26);rand_proveedores();
+
+    // llamar a la funcion randomProveedor() --> Mostrar un random de 5 proveedores con su categoria
+    gotoxy(4,32);cout<<"ELIGE UN PROVEEDOR"<<endl;
+    gotoxy(4,33);cin>> _idProveedor;
+
+    gotoxy(4,35);buscarNombProveedor(_idProveedor);
+
+    gotoxy(4,36);cout<<"LETRA: "<<endl;
+    gotoxy(11,36);cin>> _letra;
+    // Mostrar opciones
+    gotoxy(13,36);cout<<"PV: "<<endl;
+    gotoxy(17,36);cin>> _pv;
+    gotoxy(19,36);cout<<"NUMERO: "<<endl;
+    gotoxy(27,36);cin>> _numFac;
+    //cuenta contable del proveedor
+    gotoxy(4,37);cout<<"CUENTA CONTABLE"<<endl;
+    //gotoxy(4,38);
+    gotoxy(4,39);cout<<"CANTIDAD: "<<endl;
+    gotoxy(14,39);cin >> _cantidad;
+    gotoxy(20,39);cout<<"PRECIO: $ "<<endl;
+    gotoxy(30,39);cin >> _PU;
+    float tasa;
+    tasa=buscarAlicuota(_idProveedor);
+    float IVA;
+
+    IVA=(((_PU*_cantidad)*tasa)/100);
+    setIVA(IVA);
+    cout << fixed;
+    gotoxy(37,39);cout<<"IVA: $  "<< setprecision(2) <<getIVA()<<endl;
+
+    _importeTotal=(_PU*_cantidad)+IVA;
+    cout << fixed;
+    gotoxy(60,39);cout<<"TOTAL: $ "<< setprecision(2) <<_importeTotal<< endl;
+
+    setEstado(1);
+    resetColor();
 
 
 
 }
+*/
 void OrdenDePago::mostrar() {
 
 
