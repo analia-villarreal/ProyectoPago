@@ -98,7 +98,7 @@ bool OrdenDePago::getEstadoOP(){
 
     return _estadoOP;
 }
-/*void OrdenDePago::cargar(int tipo) {
+void OrdenDePago::cargar(int tipo) {
 
     marco_comprobante(1,2,80,48);
 
@@ -107,7 +107,7 @@ bool OrdenDePago::getEstadoOP(){
     setTipo(tipoOP);
 
     if(getTipoOP()==1){
-        gotoxy(4,3);cout<<"ESTA CARGANDO UNA FACTURA" <<endl;
+        gotoxy(4,3);cout<<"ESTA CARGANDO UN PAGO VARIO" <<endl;
     }
     if(getTipo()==2){
         gotoxy(4,3);cout<<"ESTA CARGANDO UNA NOTA DE CREDITO"<<endl;
@@ -227,7 +227,7 @@ bool OrdenDePago::getEstadoOP(){
 
 
 }
-*/
+
 void OrdenDePago::mostrar() {
 
 

@@ -423,6 +423,66 @@ void menuPlandeCuentas()
 
 }
 
+void menuOP()
+{
+    Comprobante reg;
+    int opc;
+    while(true)
+    {
+        system("cls");
+        gotoxy(40,5);cout << "-----MENU ORDENES DE PAGO -----" << endl;
+        gotoxy(40,6);cout << "---------------------------" << endl;
+        gotoxy(40,7);cout << "1. ALTA "         << endl;
+        gotoxy(40,8);cout << "2. BAJA "         << endl;
+        gotoxy(40,9);cout << "3. LISTAR "      << endl;
+        gotoxy(40,10);cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
+        gotoxy(40,11);cout << "- SELECCIONE UNA OPCION: - " << endl;
+        gotoxy(40,12);cout << "---------------------------" << endl;
+        gotoxy(40,13);cout<<" > ";cin>>opc;
+        system("cls");
+        switch(opc)
+        {
+        case 1:
+            int tipoComp;
+            gotoxy(40,5);cout << "Factura: 1  Nota de Crédito: 2"<< endl;
+            gotoxy(40,6);cout<<" > ";cin>>tipoComp;
+            system("cls");
+            reg.cargar(tipoComp);
+            if(reg.getEstado()==true)
+            {
+                if(reg.guardarEnDisco()==true)
+                {
+                   gotoxy(4,41);cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
+                   resetColor();
+                }
+                else
+                {
+                    gotoxy(4,41);cout<<"NO SE PUDO GRABAR EL REGISTRO"<<endl;
+                    resetColor();
+                }
+            }
+            else
+            {
+                cout<<"ERROR DE DATOS"<<endl;
+            }
+            gotoxy(4,42);system("pause");
+            break;
+        case 2:
+        //BAJA COMPROBANTE;
+        case 3:
+            reg.listarComprobantes();
+            system("pause");
+            break;
+        case 0:
+            return;
+            break;
+        default:
+            cout<<" OPCION INCORRECTA"<<endl;
+            break;
+        }
+    }
+
+}
 
 
 
