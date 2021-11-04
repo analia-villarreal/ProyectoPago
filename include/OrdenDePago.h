@@ -6,10 +6,11 @@
 #include "Proveedor.h"
 #include "MediosDePagos.h"
 
+
 class OrdenDePago
 {
     private:
-        OrdenDePago();
+       // OrdenDePago();
         int _idOP;
         Fecha _fechaContabilizacion;
         int _tipoOP;

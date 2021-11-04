@@ -1,9 +1,21 @@
 #ifndef MENSAJE_H
 #define MENSAJE_H
 
-
+#include "rlutil.h"
+/*
 class Mensaje
 {
+    public:
+        enum class TipoMensaje{
+
+            Info,
+            Exito,
+            Error
+
+        };
+
+        Mensaje(string mensaje, TipoMensaje tipoMensaje = TipoMensaje::Info , int x=1, int y=24);
+        void mostrar();
 
 
     private:
@@ -13,17 +25,6 @@ class Mensaje
         int _x , _y;
 
 
-    public:
-        enum class TipoMensaje{
-
-            Info;
-            Exito;
-            Error
-
-        };
-        Mensaje(string mensaje, TipoMensaje tipoMensaje::Info , int x=1 , int y=24);
-        void mostrar();
-
 };
-
+*/
 #endif // MENSAJE_H

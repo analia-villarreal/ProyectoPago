@@ -1,6 +1,14 @@
+#include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include "rlutil.h"
 #include "Mensaje.h"
+/*
+using namespace rlutil;
 
-Mensaje::Mensaje( string mensaje, TipoMensaje tipoMensaje, int x, int y)
+using namespace std;
+
+Mensaje::Mensaje(string mensaje, TipoMensaje tipoMensaje, int x, int y)
 {
     _mensaje=mensaje;
     _tipoMensaje=tipoMensaje;
@@ -8,20 +16,22 @@ Mensaje::Mensaje( string mensaje, TipoMensaje tipoMensaje, int x, int y)
     _y=y;
 }
 
-void Mensaje::mostrar(){
+void Mensaje::mostrar()
+{
 
     int color;
 
-    switch(_tipoMensaje){
+    switch(_tipoMensaje)
+    {
 
-        case TipoMensaje::Info: // Info
-            color = rlutil::YELLOW;
+    case TipoMensaje::Info: // Info
+        color = rlutil::YELLOW;
         break;
-        case TipoMensaje::Exito: // Éxito
-            color = rlutil::LIGHTGREEN;
+    case TipoMensaje::Exito: // Éxito
+        color = rlutil::LIGHTGREEN;
         break;
-        case TipoMensaje::Error: // Error
-            color = rlutil::LIGHTRED;
+    case TipoMensaje::Error: // Error
+        color = rlutil::LIGHTRED;
         break;
 
     }
@@ -31,3 +41,4 @@ void Mensaje::mostrar(){
     cout << _mensaje;
 
 }
+*/

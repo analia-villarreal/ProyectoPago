@@ -45,7 +45,7 @@
 1624301290 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\fecha.h
 	<time.h>
 
-1635467966 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\ordendepago.cpp
+1635993792 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\ordendepago.cpp
 	"OrdenDePago.h"
 	"Impuesto.h"
 	"Proveedor.h"
@@ -59,7 +59,7 @@
 	<clocale>
 	<cstdio>
 
-1635462448 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\ordendepago.h
+1635993609 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\ordendepago.h
 	"Fecha.h"
 	"Impuesto.h"
 	"Proveedor.h"
@@ -132,7 +132,7 @@
 	"Impuesto.h"
 	"Proveedor.h"
 
-1635464563 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
+1635991820 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -151,6 +151,7 @@
 	"rlutil.h"
 	"Funciones.h"
 	"Reportes.h"
+	"Mensaje.h"
 
 1604164361 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\rlutil.h
 	<iostream>
@@ -166,9 +167,9 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1635038652 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
+1635992764 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
 
-1635464971 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
+1635993235 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
 	"Funciones.h"
 	<iostream>
 	<cstring>
@@ -207,5 +208,15 @@
 	"OrdenDePago.h"
 	"PlanDeCuentas.h"
 	"Proveedor.h"
+	"rlutil.h"
+
+1635992662 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\mensaje.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"rlutil.h"
+	"Mensaje.h"
+
+1635992632 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\mensaje.h
 	"rlutil.h"
 

@@ -425,7 +425,7 @@ void menuPlandeCuentas()
 
 void menuOP()
 {
-    Comprobante reg;
+    OrdenDePago regis;
     int opc;
     while(true)
     {
@@ -443,14 +443,15 @@ void menuOP()
         switch(opc)
         {
         case 1:
-            int tipoComp;
-            gotoxy(40,5);cout << "Factura: 1  Nota de Crédito: 2"<< endl;
-            gotoxy(40,6);cout<<" > ";cin>>tipoComp;
+            int tipoOP;
+            gotoxy(40,5);cout << "REALIZAR PAGOS "<< endl;
+            gotoxy(40,5);cout << "PAGOS VARIOS : 1  PAGO A PROVEEDOR: 2"<< endl;
+            gotoxy(40,6);cout<<" > ";cin>>tipoOP;
             system("cls");
-            reg.cargar(tipoComp);
-            if(reg.getEstado()==true)
+            regis.cargar(tipoOP);
+            if(regis.getEstadoOP()==true)
             {
-                if(reg.guardarEnDisco()==true)
+                if(regis.guardarEnDisco()==true)
                 {
                    gotoxy(4,41);cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
                    resetColor();
@@ -470,7 +471,6 @@ void menuOP()
         case 2:
         //BAJA COMPROBANTE;
         case 3:
-            reg.listarComprobantes();
             system("pause");
             break;
         case 0:
@@ -483,6 +483,4 @@ void menuOP()
     }
 
 }
-
-
 

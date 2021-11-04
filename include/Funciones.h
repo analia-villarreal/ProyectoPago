@@ -7,6 +7,8 @@ void menuComprobante();
 
 void menuProveedor();
 
+void menuOP();
+
 void menuPrincipal();
 
 void menuPlandeCuentas();

@@ -16,6 +16,7 @@
 #include "rlutil.h"
 #include "Funciones.h"
 #include "Reportes.h"
+#include "Mensaje.h"
 
 using namespace std;
 
