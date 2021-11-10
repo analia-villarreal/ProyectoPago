@@ -11,7 +11,7 @@ class MediosDePagos
 
 
     public:
-        MediosDePagos();
+        //MediosDePagos();
         void setIdMp(int);
         void setDescripcionMedioPago(const char*);
         void setEstadoMP(bool);
@@ -19,9 +19,10 @@ class MediosDePagos
         const char * getDescripcionMP();
         bool getEstadoMP();
         bool cargar();
+        void cargarMedios();
         void mostrar();
+        void listarMediosDePagos();
         bool guardarEnDisco();
-        void guardarEnDisco(int);
         bool leerDeDisco(int);
 
 

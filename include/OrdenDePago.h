@@ -19,9 +19,10 @@ class OrdenDePago
         int _numComp;
         float _retIIBB;
         float _retGanancias;
+        int _cuentaContable;
         float _importeAPagar;
         float _importeTotal;
-        MediosDePagos _formDePago;
+        int  _formDePago;
         bool _estadoOP;
 
 
@@ -33,9 +34,10 @@ class OrdenDePago
         void setTipoOP(int);
         void setRetIIBB(float);
         void setRetGanancias(float);
+        void setCuentaContable(int);
         void setImporteAPagar(float);
         void setImporteTotal(float);
-        void setFormaDePago(MediosDePagos);
+        void setFormaDePago(int);
         void setEstadoOP(bool);
         int getIdOP();
         int getTipoOP();
@@ -45,6 +47,7 @@ class OrdenDePago
         int getNumComp();
         float getRetIIBB();
         float getRetGanancias();
+        int getCuentaContable();
         float getImporteAPagar();
         float getImporteTotal();
         bool getEstadoOP();

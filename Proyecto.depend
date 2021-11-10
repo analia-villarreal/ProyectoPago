@@ -14,7 +14,7 @@
 
 1623716997 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\impuesto.h
 
-1635462319 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\mediosdepagos.cpp
+1636500075 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\mediosdepagos.cpp
 	"MediosDePagos.h"
 	<iostream>
 	"Impuesto.h"
@@ -22,13 +22,14 @@
 	"PlanDeCuentas.h"
 	"rlutil.h"
 	"Funciones.h"
+	"OrdenDePago.h"
 	<cstring>
 	<cstdlib>
 	<conio.h>
 	<clocale>
 	<cstdio>
 
-1635462319 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\mediosdepagos.h
+1636067822 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\mediosdepagos.h
 
 1635466130 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\fecha.cpp
 	"Fecha.h"
@@ -45,13 +46,14 @@
 1624301290 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\fecha.h
 	<time.h>
 
-1635993792 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\ordendepago.cpp
+1636501694 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\ordendepago.cpp
 	"OrdenDePago.h"
 	"Impuesto.h"
 	"Proveedor.h"
 	"PlanDeCuentas.h"
 	"rlutil.h"
 	"Funciones.h"
+	"MediosDePagos.h"
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -59,13 +61,13 @@
 	<clocale>
 	<cstdio>
 
-1635993609 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\ordendepago.h
+1636497274 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\ordendepago.h
 	"Fecha.h"
 	"Impuesto.h"
 	"Proveedor.h"
 	"MediosDePagos.h"
 
-1635464636 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\plandecuentas.cpp
+1636495757 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\plandecuentas.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -132,7 +134,7 @@
 	"Impuesto.h"
 	"Proveedor.h"
 
-1635991820 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
+1636074928 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\main.cpp
 	<iostream>
 	<cstring>
 	<cstdlib>
@@ -167,9 +169,9 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1635992764 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
+1636501850 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
 
-1635993235 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
+1636501763 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
 	"Funciones.h"
 	<iostream>
 	<cstring>
@@ -188,6 +190,7 @@
 	"Proveedor.h"
 	"rlutil.h"
 	"Reportes.h"
+	"Mensaje.h"
 
 1635461274 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\reportes.h
 
@@ -210,13 +213,11 @@
 	"Proveedor.h"
 	"rlutil.h"
 
-1635992662 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\mensaje.cpp
+1636494520 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\mensaje.cpp
 	<iostream>
-	<cstring>
 	<cstdlib>
 	"rlutil.h"
 	"Mensaje.h"
 
-1635992632 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\mensaje.h
-	"rlutil.h"
+1636494544 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\mensaje.h
 

@@ -5,6 +5,7 @@
 #include "PlanDeCuentas.h"
 #include "rlutil.h"
 #include "Funciones.h"
+#include "OrdenDePago.h"
 
 #include <cstring>
 #include <cstdlib>
@@ -16,10 +17,10 @@ using namespace std;
 
 using namespace rlutil;
 
-MediosDePagos::MediosDePagos()
-{
-    //ctor
-}
+//MediosDePagos::MediosDePagos()
+//{
+//    //ctor
+//}
 
 void MediosDePagos::setIdMp(int id ){
 
@@ -59,13 +60,59 @@ bool MediosDePagos::cargar(){
     cin>> desc;
     strcpy(_descripcionMedioPago, desc);
     setEstadoMP(true);
+
 }
+
+void MediosDePagos::cargarMedios(){
+
+    setIdMp(1);
+    setDescripcionMedioPago("Transferencia Bancaria");
+    guardarEnDisco();
+    setIdMp(2);
+    setDescripcionMedioPago("Cheque propio");
+    guardarEnDisco();
+    setIdMp(3);
+    setDescripcionMedioPago("Cheque de terceros");
+    guardarEnDisco();
+    setIdMp(4);
+    setDescripcionMedioPago("Tarjeta de Credito");
+    guardarEnDisco();
+    setIdMp(5);
+    setDescripcionMedioPago("Caja chica");
+
+    setEstadoMP(true);
+    guardarEnDisco();
+
+}
+
+
 void MediosDePagos::mostrar(){
 
-    gotoxy(2,3);
-    cout<< _idMp;
-    gotoxy(25,3);
+    //gotoxy(2,3);
+    cout<< _idMp <<" - ";
+
+    //gotoxy(25,3);
     cout<<_descripcionMedioPago;
+
+}
+
+void MediosDePagos::listarMediosDePagos(){
+
+    int i=0;
+    gotoxy(85,20);cout<<"CODIGO ";
+    gotoxy(100,20);cout<<"DESCRIPCION";
+    cout<<endl;
+    while(leerDeDisco(i))
+    {
+        gotoxy(85,21+i);cout<<_idMp;
+        gotoxy(100,21+i);cout<<_descripcionMedioPago;
+        cout << endl;
+        i++;
+    }
+
+
+
+
 
 }
 bool MediosDePagos::guardarEnDisco(){
@@ -80,20 +127,6 @@ bool MediosDePagos::guardarEnDisco(){
     guardo = fwrite(this, sizeof(MediosDePagos), 1, p);
     fclose(p);
     return guardo;
-}
-void MediosDePagos::guardarEnDisco(int pos){
-
-    bool guardo;
-    FILE *p;
-    p = fopen("mediosdepago.dat", "rb+");
-    if (p == NULL)
-    {
-        return;
-    }
-    fseek(p, sizeof(MediosDePagos)*pos, SEEK_SET);
-    guardo = fwrite(this, sizeof(MediosDePagos), 1, p);
-    fclose(p);
-    return;
 }
 
 bool MediosDePagos::leerDeDisco(int pos){

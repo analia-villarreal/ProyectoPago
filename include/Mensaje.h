@@ -1,18 +1,18 @@
 #ifndef MENSAJE_H
 #define MENSAJE_H
 
-#include "rlutil.h"
-/*
+using namespace std;
+
 class Mensaje
 {
     public:
-        enum class TipoMensaje{
+       enum class TipoMensaje{
 
-            Info,
-            Exito,
-            Error
+           Info,
+           Exito,
+           Error
 
-        };
+       };
 
         Mensaje(string mensaje, TipoMensaje tipoMensaje = TipoMensaje::Info , int x=1, int y=24);
         void mostrar();
@@ -26,5 +26,5 @@ class Mensaje
 
 
 };
-*/
+
 #endif // MENSAJE_H

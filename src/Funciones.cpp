@@ -17,6 +17,7 @@
 #include "Proveedor.h"
 #include "rlutil.h"
 #include "Reportes.h"
+#include "Mensaje.h"
 
 
 using namespace std;
@@ -53,6 +54,66 @@ void marco_comprobante(int x, int y, int ancho, int alto )
 
 }
 
+const char* buscarNombreMedioDePago(int medio)
+{
+    MediosDePagos reg;
+
+    int pos;
+
+    pos=buscarPosMP(medio);
+
+    reg.leerDeDisco(pos);
+
+    cout<<" - "<<reg.getDescripcionMP()<<endl;
+
+}
+
+const char* buscarNombreCuentaContable(int cuentaCont)
+{
+    PlanDeCuentas reg;
+
+    int pos;
+
+    pos=buscarPosCuenta(cuentaCont);
+
+    reg.leerDeDisco(pos);
+
+
+   cout<<" - "<<reg.getDescripcionCuenta()<<endl;
+
+}
+int buscarPosMP(int medio)
+{
+    MediosDePagos reg;
+    int i = 0;
+    while(reg.leerDeDisco(i))
+    {
+        if ( medio == reg.getIdMedioPago())
+        {
+            return i;
+        }
+        i++;
+    }
+    return -1;
+
+}
+
+
+int buscarPosCuenta(int cuentaCont)
+{
+    PlanDeCuentas reg;
+    int i = 0;
+    while(reg.leerDeDisco(i))
+    {
+        if ( cuentaCont == reg.getCuentaContable())
+        {
+            return i;
+        }
+        i++;
+    }
+    return -1;
+
+}
 int contarProveedores()
 {
     int bytes, cr;
@@ -69,7 +130,7 @@ int contarProveedores()
     return cr;
 }
 
-int  buscarPosProveedor(int idProveedor)
+int buscarPosProveedor(int idProveedor)
 {
     Proveedor reg;
     int i = 0;
@@ -84,6 +145,7 @@ int  buscarPosProveedor(int idProveedor)
     return -1;
 
 }
+
 
 bool buscarProveedor(int idProveedor)
 {
@@ -130,6 +192,23 @@ void buscarNombProveedor(int idProveedor)
 
 }
 
+void buscarFacturasProveedor(int idProveedor)
+{
+
+    Comprobante reg;
+
+    int i = 0;
+
+    while(reg.leerDeDisco(i))
+    {
+        if ( idProveedor == reg.getIdProveedor())
+        {
+            gotoxy(85,10+i);reg.mostrar();
+        }
+        i++;
+    }
+
+}
 
 bool sinRepetidos(int n, int vec[])
 {
@@ -187,6 +266,45 @@ void rand_proveedores()
 
 }
 
+void rand_proveedoresOP()
+{
+
+    int vecNum[10]= {};
+
+    int prov;
+
+    prov = contarProveedores();
+
+    int i=0;
+    int valor;
+
+    while(i<10)
+    {
+
+        valor=rand()%prov+1;
+        while(sinRepetidos(valor,vecNum)==false)
+        {
+            vecNum[i]=valor;
+            i++;
+        }
+
+    }
+
+    for(int j=0; j<10; j++)
+    {
+        Proveedor reg;
+
+        int pos;
+
+        pos=buscarPosProveedor(vecNum[j]);
+
+        reg.leerDeDisco(pos);
+        rlutil::locate(85,26+j);
+        cout<<vecNum[j]<<"-"<< reg.getRazonSocial()<<endl;
+
+    }
+
+}
 
 void listarProveedores()
 {
@@ -470,7 +588,8 @@ void menuOP()
             break;
         case 2:
         //BAJA COMPROBANTE;
-        case 3:
+            MediosDePagos obj;
+        case 3:obj.listarMediosDePagos();
             system("pause");
             break;
         case 0:

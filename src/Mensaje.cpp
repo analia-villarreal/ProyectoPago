@@ -1,9 +1,8 @@
 #include <iostream>
-#include <cstring>
 #include <cstdlib>
 #include "rlutil.h"
 #include "Mensaje.h"
-/*
+
 using namespace rlutil;
 
 using namespace std;
@@ -41,4 +40,4 @@ void Mensaje::mostrar()
     cout << _mensaje;
 
 }
-*/
+

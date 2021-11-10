@@ -101,15 +101,16 @@ bool PlanDeCuentas::leerDeDisco(int pos)
 
 void PlanDeCuentas::listarPlanDeCuentas()
 {
-    cout << left;
-    cout<< setw(16) <<"CODIGO CUENTA ";
-    cout<< setw(20) <<"DESCRIPCION CUENTA ";
+
+    gotoxy(85,5);cout<<"CODIGO CUENTA ";
+    gotoxy(100,5);cout<<"DESCRIPCION CUENTA ";
     cout<<endl;
     int pos=0;
     while(leerDeDisco(pos)==true)
     {
-        mostrar();
+        gotoxy(85,6+pos);cout<<_cuentaContable;
+        gotoxy(100,6+pos);cout<<_descripcionCuenta;
         pos++;
     }
-    cout<<endl;
+    //cout<<endl;
 }

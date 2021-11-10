@@ -4,6 +4,7 @@
 #include "PlanDeCuentas.h"
 #include "rlutil.h"
 #include "Funciones.h"
+#include "MediosDePagos.h"
 
 #include <iostream>
 #include <cstring>
@@ -46,6 +47,10 @@ void OrdenDePago::setRetGanancias(float retGanan)
 
     _retGanancias=retGanan;
 }
+void OrdenDePago::setCuentaContable(int cuenta)
+{
+    _cuentaContable=cuenta;
+}
 void OrdenDePago::setImporteAPagar(float importe)
 {
 
@@ -56,7 +61,7 @@ void OrdenDePago::setImporteTotal(float importeTotal)
 
     _importeTotal=importeTotal;
 }
-void OrdenDePago::setFormaDePago(MediosDePagos formaPago)
+void OrdenDePago::setFormaDePago(int formaPago)
 {
 
     _formDePago=formaPago;
@@ -102,6 +107,10 @@ float OrdenDePago::getRetGanancias()
 
     return _retGanancias;
 }
+int OrdenDePago::getCuentaContable()
+{
+    return _cuentaContable;
+}
 float OrdenDePago::getImporteAPagar()
 {
 
@@ -128,52 +137,52 @@ void OrdenDePago::cargar(int tipoOP)
 
     if(getTipoOP()==1)
     {
-        gotoxy(4,3);
-        cout<<" PAGOS VARIOS" <<endl;
-        gotoxy(4,5);
+        gotoxy(10,3);
+        cout<<"PAGOS VARIOS" <<endl;
+        gotoxy(10,5);
         cout<<"FECHA CONTABILIZACIÓN"<<endl;
 
         int d,m,a;
-        gotoxy(4,6);
+        gotoxy(10,6);
         cout<<"DIA: "<<endl;
-        gotoxy(9,6);
+        gotoxy(15,6);
         cin>>d;
         while (d <= 0 || d >32)
         {
-            gotoxy(5,7);
+            gotoxy(10,7);
             cout << "Ingrese un dia entre 1 y 31" << endl;
-            gotoxy(5,8);
+            gotoxy(11,8);
             cout << "DIA: " << endl;
-            gotoxy(10,8);
+            gotoxy(15,8);
             cin >> d;
         }
 
-        gotoxy(4,9);
+        gotoxy(10,9);
         cout<<"MES: "<<endl;
-        gotoxy(9,9);
+        gotoxy(15,9);
         cin>>m;
         while (m <=0 || m >13)
         {
-            gotoxy(5,10);
+            gotoxy(11,10);
             cout << "Ingrese un mes entre 1 Y 12" << endl;
-            gotoxy(5,11);
+            gotoxy(11,11);
             cout << "MES: " << endl;
-            gotoxy(9,11);
+            gotoxy(15,11);
             cin >> m;
         }
 
-        gotoxy(4,12);
+        gotoxy(10,12);
         cout<<"AÑO: "<<endl;
-        gotoxy(9,12);
+        gotoxy(15,12);
         cin>>a;
 
         while (a<1990)
         {
-            gotoxy(5,13);
+            gotoxy(11,13);
             cout << "iNGRESE UN AÑO MAYOR A 1990" << endl;
-            gotoxy(5,14);
+            gotoxy(11,14);
             cout << "AÑO: " << endl;
-            gotoxy(9,14);
+            gotoxy(15,14);
             cin >> a;
         }
 
@@ -184,17 +193,106 @@ void OrdenDePago::cargar(int tipoOP)
 
         PlanDeCuentas reg;
 
+        reg.listarPlanDeCuentas();
 
-        gotoxy(80,15);reg.listarPlanDeCuentas();
+        int cuenta;
 
+        gotoxy(10,15);cout<<"Cuenta a imputar: "<< endl;
+
+        gotoxy(30,15);cin>> cuenta;
+
+        setCuentaContable(cuenta);
+
+        gotoxy(36,15);buscarNombreCuentaContable(cuenta);
+
+        gotoxy(10,20);cout<<" Importe: "<< endl;
+
+        float imp;
+
+        gotoxy(20,20);cin>> imp;
+
+        setImporteAPagar(imp);
+        setImporteTotal(imp);
+
+        MediosDePagos obj;
+
+        obj.listarMediosDePagos();
+
+        gotoxy(10,25);cout<<"Forma de pago: "<< endl;
+
+        int medio;
+
+        gotoxy(27,25);cin>>medio;
+
+        setFormaDePago(medio);
+
+        gotoxy(31,25);buscarNombreMedioDePago(medio);
 
 
     }
     if(getTipoOP()==2)
     {
-        gotoxy(4,3);
-        cout<<"PAGO A PROVEEDOR"<<endl;
+        gotoxy(10,3);
+        cout<<"PAGOS VARIOS" <<endl;
+        gotoxy(10,5);
+        cout<<"FECHA CONTABILIZACIÓN"<<endl;
 
+        int d,m,a;
+        gotoxy(10,6);
+        cout<<"DIA: "<<endl;
+        gotoxy(15,6);
+        cin>>d;
+        while (d <= 0 || d >32)
+        {
+            gotoxy(10,7);
+            cout << "Ingrese un dia entre 1 y 31" << endl;
+            gotoxy(11,8);
+            cout << "DIA: " << endl;
+            gotoxy(15,8);
+            cin >> d;
+        }
+
+        gotoxy(10,9);
+        cout<<"MES: "<<endl;
+        gotoxy(15,9);
+        cin>>m;
+        while (m <=0 || m >13)
+        {
+            gotoxy(11,10);
+            cout << "Ingrese un mes entre 1 Y 12" << endl;
+            gotoxy(11,11);
+            cout << "MES: " << endl;
+            gotoxy(15,11);
+            cin >> m;
+        }
+
+        gotoxy(10,12);
+        cout<<"AÑO: "<<endl;
+        gotoxy(15,12);
+        cin>>a;
+
+        while (a<1990)
+        {
+            gotoxy(11,13);
+            cout << "iNGRESE UN AÑO MAYOR A 1990" << endl;
+            gotoxy(11,14);
+            cout << "AÑO: " << endl;
+            gotoxy(15,14);
+            cin >> a;
+        }
+
+        _fechaContabilizacion.setDia(d);
+        _fechaContabilizacion.setMes(m);
+        _fechaContabilizacion.setAnio(a);
+
+        //gotoxy(10,17);cout<<"PROVEEDOR"<<endl;
+
+        rand_proveedoresOP();
+
+        gotoxy(10,19);cout<<"ELIGE UN PROVEEDOR: "<<endl;
+        gotoxy(30,19);cin>> _idProveedor;
+
+        gotoxy(10,19);buscarFacturasProveedor(_idProveedor);
 
 
 
