@@ -198,7 +198,7 @@ void OrdenDePago::cargar(int tipoOP)
         reg.listarPlanDeCuentas();
 
         int cuenta;
-
+        //marco_comprobante(10,16,50,10);
         gotoxy(10,15);cout<<"Cuenta a imputar: "<< endl;
 
         gotoxy(30,15);cin>> cuenta;

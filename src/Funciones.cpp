@@ -208,7 +208,6 @@ void buscarFacturasProveedor(int idProveedor)
                 gotoxy(12,21+i);cout<<reg.getPV()<<"-"<< reg.getNumFac()<<"="<<reg.getImporteTotal();
                 cout<<endl;
             }
-
         }
 
         i++;
