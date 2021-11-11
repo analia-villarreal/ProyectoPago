@@ -32,6 +32,7 @@ class OrdenDePago
         void setIdOP(int);
         void setFechaContabilizacion(Fecha);
         void setTipoOP(int);
+        void setIdProveedor(int);
         void setRetIIBB(float);
         void setRetGanancias(float);
         void setCuentaContable(int);

@@ -34,8 +34,11 @@ void OrdenDePago::setFechaContabilizacion(Fecha conta)
 }
 void OrdenDePago::setTipoOP(int tipo)
 {
-
     _tipoOP=tipo;
+}
+void OrdenDePago::setIdProveedor(int prov)
+{
+    _idProveedor=prov;
 }
 void OrdenDePago::setRetIIBB(float retiibb)
 {
@@ -44,7 +47,6 @@ void OrdenDePago::setRetIIBB(float retiibb)
 }
 void OrdenDePago::setRetGanancias(float retGanan)
 {
-
     _retGanancias=retGanan;
 }
 void OrdenDePago::setCuentaContable(int cuenta)
@@ -233,7 +235,7 @@ void OrdenDePago::cargar(int tipoOP)
     if(getTipoOP()==2)
     {
         gotoxy(10,3);
-        cout<<"PAGOS VARIOS" <<endl;
+        cout<<"PAGOS PROVEEDOR" <<endl;
         gotoxy(10,5);
         cout<<"FECHA CONTABILIZACIÓN"<<endl;
 
@@ -289,12 +291,40 @@ void OrdenDePago::cargar(int tipoOP)
 
         rand_proveedoresOP();
 
+        int idProv;
+
         gotoxy(10,19);cout<<"ELIGE UN PROVEEDOR: "<<endl;
-        gotoxy(30,19);cin>> _idProveedor;
+        gotoxy(30,19);cin>> idProv;
+        setIdProveedor(idProv);
 
-        gotoxy(10,19);buscarFacturasProveedor(_idProveedor);
+        marco_comprobante(10,23,50,10);
 
 
+        gotoxy(10,22);cout<<"FACTURAS PENDIENTES: "<<endl;
+        buscarFacturasProveedor(idProv);
+
+        int numfac;
+
+        gotoxy(10,35);cout<<"FACTURA A PAGAR: "<<endl;
+        gotoxy(30,35);cin>> numfac;
+
+        //setImporteAPagar(imp);
+        //setImporteTotal(imp);
+        //SETEAR EL COMPROBANTE COMO PAGO.
+
+        MediosDePagos obj;
+
+        obj.listarMediosDePagos();
+
+        gotoxy(10,37);cout<<"Forma de pago: "<< endl;
+
+        int medio;
+
+        gotoxy(27,37);cin>>medio;
+
+        setFormaDePago(medio);
+
+        gotoxy(31,37);buscarNombreMedioDePago(medio);
 
     }
     /*

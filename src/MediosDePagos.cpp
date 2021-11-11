@@ -99,20 +99,16 @@ void MediosDePagos::mostrar(){
 void MediosDePagos::listarMediosDePagos(){
 
     int i=0;
-    gotoxy(85,20);cout<<"CODIGO ";
-    gotoxy(100,20);cout<<"DESCRIPCION";
+    gotoxy(85,15);cout<<"CODIGO ";
+    gotoxy(93,15);cout<<"DESCRIPCION";
     cout<<endl;
     while(leerDeDisco(i))
     {
-        gotoxy(85,21+i);cout<<_idMp;
-        gotoxy(100,21+i);cout<<_descripcionMedioPago;
+        gotoxy(85,16+i);cout<<_idMp;
+        gotoxy(93,16+i);cout<<_descripcionMedioPago;
         cout << endl;
         i++;
     }
-
-
-
-
 
 }
 bool MediosDePagos::guardarEnDisco(){

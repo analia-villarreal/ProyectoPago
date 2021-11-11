@@ -28,7 +28,7 @@ void marco_comprobante(int x, int y, int ancho, int alto )
 {
 
     setBackgroundColor(BLACK);
-    cls();
+    //cls();
     setColor(LIGHTCYAN);
     int i;
     for(i=x; i<=x+ancho; i++)
@@ -203,8 +203,14 @@ void buscarFacturasProveedor(int idProveedor)
     {
         if ( idProveedor == reg.getIdProveedor())
         {
-            gotoxy(85,10+i);reg.mostrar();
+          if(reg.getNumFac()!=0){
+
+                gotoxy(12,21+i);cout<<reg.getPV()<<"-"<< reg.getNumFac()<<"="<<reg.getImporteTotal();
+                cout<<endl;
+            }
+
         }
+
         i++;
     }
 
@@ -224,6 +230,19 @@ bool sinRepetidos(int n, int vec[])
     return false;
 }
 
+bool sinRepetidosDiez(int n, int vec[])
+{
+
+    for(int i=0; i<10; i++)
+    {
+        if(n == vec[i])
+        {
+            return true;
+        }
+
+    }
+    return false;
+}
 
 
 void rand_proveedores()
@@ -260,7 +279,7 @@ void rand_proveedores()
 
         reg.leerDeDisco(pos);
         rlutil::locate(4, 26+j);
-        cout<<vecNum[j]<<"-"<< reg.getRazonSocial()<<endl;
+        cout<<vecNum[j]<<" - "<< reg.getRazonSocial()<<" - "<<reg.getCategoria()<<endl;
 
     }
 
@@ -282,7 +301,7 @@ void rand_proveedoresOP()
     {
 
         valor=rand()%prov+1;
-        while(sinRepetidos(valor,vecNum)==false)
+        while(sinRepetidosDiez(valor,vecNum)==false)
         {
             vecNum[i]=valor;
             i++;
@@ -300,7 +319,7 @@ void rand_proveedoresOP()
 
         reg.leerDeDisco(pos);
         rlutil::locate(85,26+j);
-        cout<<vecNum[j]<<"-"<< reg.getRazonSocial()<<endl;
+        cout<<vecNum[j]<<" - "<< reg.getRazonSocial()<<" - "<<reg.getCategoria()<<endl;
 
     }
 
@@ -311,8 +330,14 @@ void listarProveedores()
     int i=0;
     Proveedor reg;
 
+    cout << left;
+    cout << setw(8)  << "CODIGO";
+    cout << setw(25) << "NOMBRE";
+    cout << setw(30) << "CATEGORIA"<<endl;
+
     while(reg.leerDeDisco(i))
     {
+
         reg.mostrar();
         cout << endl;
         i++;

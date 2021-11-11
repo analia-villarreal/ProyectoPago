@@ -14,7 +14,7 @@
 
 1623716997 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\impuesto.h
 
-1636500075 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\mediosdepagos.cpp
+1636598550 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\mediosdepagos.cpp
 	"MediosDePagos.h"
 	<iostream>
 	"Impuesto.h"
@@ -46,7 +46,7 @@
 1624301290 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\fecha.h
 	<time.h>
 
-1636501694 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\ordendepago.cpp
+1636598135 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\ordendepago.cpp
 	"OrdenDePago.h"
 	"Impuesto.h"
 	"Proveedor.h"
@@ -61,7 +61,7 @@
 	<clocale>
 	<cstdio>
 
-1636497274 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\ordendepago.h
+1636596733 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\ordendepago.h
 	"Fecha.h"
 	"Impuesto.h"
 	"Proveedor.h"
@@ -90,7 +90,7 @@
 1635461837 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\plandecuentas.h
 	"Funciones.h"
 
-1635464971 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\proveedor.cpp
+1636594786 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\proveedor.cpp
 	"Proveedor.h"
 	"MediosDePagos.h"
 	"OrdenDePago.h"
@@ -169,9 +169,9 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1636501850 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
+1636596910 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\funciones.h
 
-1636501763 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
+1636598894 source:c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\src\funciones.cpp
 	"Funciones.h"
 	<iostream>
 	<cstring>

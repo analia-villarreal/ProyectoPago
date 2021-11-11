@@ -160,9 +160,11 @@ bool Proveedor::cargar()
 }
 void Proveedor::mostrar()
 {
-    cout<<"CODIGO PROVEEDOR "<< _idProveedor <<endl;
-    cout<<"NOMBRE PROVEEDOR "<< _razonSocial <<endl;
-    cout<<"CATEGORIA        "<< _categoria <<endl;
+    cout << left;
+    cout<< setw(8) <<_idProveedor;
+    cout<< setw(25) <<_razonSocial;
+    cout<< setw(30) <<_categoria;
+    cout<<endl;
 }
 bool Proveedor::guardarEnDisco()
 {
