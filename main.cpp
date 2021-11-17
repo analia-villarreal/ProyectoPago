@@ -29,9 +29,9 @@ int main()
     srand(time(NULL));
     int opcion;
 
-    MediosDePagos obj;
+    //ediosDePagos obj;
 
-    obj.cargarMedios();
+    //obj.cargarMedios();
 
     system("cls");
 
