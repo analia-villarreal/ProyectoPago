@@ -39,6 +39,8 @@ void rand_proveedoresOP();
 
 void listarProveedores();
 
+void bajaProveedor();
+
 void listarComprobantes();
 
 bool sinRepetidos(int,int[]);
