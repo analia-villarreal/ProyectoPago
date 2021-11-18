@@ -221,3 +221,204 @@
 
 1636494544 c:\users\usuario\documents\utn\laboratorio de programacion ii\proyecto\proyectopagoaproveedores\include\mensaje.h
 
+1637194246 source:c:\users\lucas\documents\github\proyectopagoaproveedores\main.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<clocale>
+	<cstdio>
+	<conio.h>
+	<ctime>
+	<iomanip>
+	"Comprobante.h"
+	"Fecha.h"
+	"Impuesto.h"
+	"MediosDePagos.h"
+	"OrdenDePago.h"
+	"PlanDeCuentas.h"
+	"Proveedor.h"
+	"rlutil.h"
+	"Funciones.h"
+	"Reportes.h"
+	"Mensaje.h"
+
+1636907228 c:\users\lucas\documents\github\proyectopagoaproveedores\include\comprobante.h
+	"Fecha.h"
+	"Impuesto.h"
+	"Proveedor.h"
+
+1636907228 c:\users\lucas\documents\github\proyectopagoaproveedores\include\fecha.h
+	<time.h>
+
+1636907228 c:\users\lucas\documents\github\proyectopagoaproveedores\include\impuesto.h
+
+1636907228 c:\users\lucas\documents\github\proyectopagoaproveedores\include\proveedor.h
+	"Impuesto.h"
+
+1636907228 c:\users\lucas\documents\github\proyectopagoaproveedores\include\mediosdepagos.h
+
+1636907228 c:\users\lucas\documents\github\proyectopagoaproveedores\include\ordendepago.h
+	"Fecha.h"
+	"Impuesto.h"
+	"Proveedor.h"
+	"MediosDePagos.h"
+
+1636907228 c:\users\lucas\documents\github\proyectopagoaproveedores\include\plandecuentas.h
+	"Funciones.h"
+
+1637274559 c:\users\lucas\documents\github\proyectopagoaproveedores\include\funciones.h
+
+1636907228 c:\users\lucas\documents\github\proyectopagoaproveedores\include\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1636907228 c:\users\lucas\documents\github\proyectopagoaproveedores\include\reportes.h
+
+1636907228 c:\users\lucas\documents\github\proyectopagoaproveedores\include\mensaje.h
+
+1636907228 source:c:\users\lucas\documents\github\proyectopagoaproveedores\src\comprobante.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<conio.h>
+	<clocale>
+	<cstdio>
+	<iomanip>
+	"Comprobante.h"
+	"Impuesto.h"
+	"PlanDeCuentas.h"
+	"Proveedor.h"
+	"Funciones.h"
+	"rlutil.h"
+	"Fecha.h"
+	"Reportes.h"
+
+1636907228 source:c:\users\lucas\documents\github\proyectopagoaproveedores\src\fecha.cpp
+	"Fecha.h"
+	"Proveedor.h"
+	"Impuesto.h"
+	<iostream>
+	<cstring>
+	<cstdlib>
+	"rlutil.h"
+	<cstdio>
+	<conio.h>
+	<iomanip>
+
+1636907228 source:c:\users\lucas\documents\github\proyectopagoaproveedores\src\impuesto.cpp
+	"Impuesto.h"
+	"Proveedor.h"
+	"PlanDeCuentas.h"
+	"rlutil.h"
+	"Funciones.h"
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<conio.h>
+	<clocale>
+	<cstdio>
+
+1636907228 source:c:\users\lucas\documents\github\proyectopagoaproveedores\src\mediosdepagos.cpp
+	"MediosDePagos.h"
+	<iostream>
+	"Impuesto.h"
+	"Proveedor.h"
+	"PlanDeCuentas.h"
+	"rlutil.h"
+	"Funciones.h"
+	"OrdenDePago.h"
+	<cstring>
+	<cstdlib>
+	<conio.h>
+	<clocale>
+	<cstdio>
+
+1636907228 source:c:\users\lucas\documents\github\proyectopagoaproveedores\src\mensaje.cpp
+	<iostream>
+	<cstdlib>
+	"rlutil.h"
+	"Mensaje.h"
+
+1636907228 source:c:\users\lucas\documents\github\proyectopagoaproveedores\src\ordendepago.cpp
+	"OrdenDePago.h"
+	"Impuesto.h"
+	"Proveedor.h"
+	"PlanDeCuentas.h"
+	"rlutil.h"
+	"Funciones.h"
+	"MediosDePagos.h"
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<conio.h>
+	<clocale>
+	<cstdio>
+
+1636907228 source:c:\users\lucas\documents\github\proyectopagoaproveedores\src\plandecuentas.cpp
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<clocale>
+	<cstdio>
+	<conio.h>
+	<ctime>
+	<iomanip>
+	"Comprobante.h"
+	"Fecha.h"
+	"Impuesto.h"
+	"MediosDePagos.h"
+	"OrdenDePago.h"
+	"PlanDeCuentas.h"
+	"Proveedor.h"
+	"rlutil.h"
+	"Funciones.h"
+	"Reportes.h"
+
+1636907228 source:c:\users\lucas\documents\github\proyectopagoaproveedores\src\proveedor.cpp
+	"Proveedor.h"
+	"MediosDePagos.h"
+	"OrdenDePago.h"
+	"Comprobante.h"
+	"Fecha.h"
+	"Impuesto.h"
+	"PlanDeCuentas.h"
+	"rlutil.h"
+	"Funciones.h"
+	"Reportes.h"
+	<iomanip>
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<cstdio>
+	<conio.h>
+	<clocale>
+
+1636907228 source:c:\users\lucas\documents\github\proyectopagoaproveedores\src\reportes.cpp
+	"Reportes.h"
+	"Funciones.h"
+	<iostream>
+	<cstring>
+	<cstdlib>
+	<clocale>
+	<cstdio>
+	<conio.h>
+	<ctime>
+	"Comprobante.h"
+	"Fecha.h"
+	"Impuesto.h"
+	"MediosDePagos.h"
+	"OrdenDePago.h"
+	"PlanDeCuentas.h"
+	"Proveedor.h"
+	"rlutil.h"
+
