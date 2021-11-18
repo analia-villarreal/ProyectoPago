@@ -243,7 +243,6 @@ bool sinRepetidosDiez(int n, int vec[])
     return false;
 }
 
-
 void rand_proveedores()
 {
 
@@ -358,8 +357,6 @@ bool soloNumeros(const char *cadena)
     return true;
 }
 
-
-
 float buscarAlicuota(int idProveedor)
 {
 
@@ -397,6 +394,61 @@ float buscarAlicuota(int idProveedor)
 
 void menuComprobante()
 {
+
+void bajaProveedor()
+{
+    Proveedor reg;
+    int i=0, idProv, opc;
+    char *cpynombre;
+    FILE *p;
+    p = fopen("proveedores.dat", "rb+");
+
+    if(p == nullptr){
+        cout << "EL ARCHIVO NO SE ABRIO CORRECTAMENTE.";
+        return;
+
+    }
+    cout << "------------- LISTA DE PROVEEDORES A DAR DE BAJA ---------------" << endl;
+    while(reg.leerDeDisco(i)){
+        if(reg.getEstadoProv == true){
+            cout << "----------------" << endl;
+            reg.mostrar();
+            cout << "----------------" << endl;
+            i++;
+        }
+    }
+
+    cout << "SELECCIONE EL CODIGO DEL PROVEEDOR QUE DESEE DAR DE BAJA: ";
+
+    cin >> idProv;
+
+    while(idProv > contarProveedores()){
+        cout << "EL CODIGO DEL PROVEEDOR NO EXISTE." << endl;
+        cout << "POR FAVOR INGRESE OTRO CODIGO DE PROVEEDOR: ";
+        cin >> idProv;
+    }
+
+    if(buscarProveedor(idProv) == true){
+        int tam=strlen(buscarNombProv2(idProv));
+        cpynombre=new char[tam+1];
+        strcpy(cpynombre,buscarNombProv2(idProv));
+
+        cout << "EL PROVEEDOR " << cpynombre << " SE ESTA POR DAR DE BAJA. ESTA SEGURO? ";
+        cout << " 1 / SI  --  2 / NO" << endl;
+        cin >> opc;
+            if(opc == 1){
+                fseek(p,sizeof(Proveedor)*idProv,0);
+                reg.setEstadoProv(false);
+                cout << "EL PROVEEDOR SE DIO DE BAJA" << endl;
+                system("pause");
+            }
+            else return;
+    }
+    delete cpynombre;
+
+    fclose(p);
+}
+
     Comprobante reg;
     int opc;
     while(true)
@@ -494,7 +546,7 @@ void menuProveedor()
             system("pause");
             break;
         case 2:
-        //BAJA PROVEEDOR;
+            bajaProveedor();
         case 3:
             listarProveedores();
             system("pause");
