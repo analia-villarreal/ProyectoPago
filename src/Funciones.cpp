@@ -462,15 +462,15 @@ void menuProveedor()
     while(true)
     {
         system("cls");
-        cout << "-----MENU PROVEEDOR--------" << endl;
-        cout << "---------------------------" << endl;
-        cout << "1. ALTA PROVEEDOR          " << endl;
-        cout << "2. BAJA PROVEEDOR          " << endl;
-        cout << "3. LISTAR PROVEDORES       " << endl;
-        cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
-        cout << "- SELECCIONE UNA OPCION: - " << endl;
-        cout << "---------------------------" << endl;
-        cin>>opc;
+        gotoxy(40,5);cout << "-----MENU PROVEEDOR--------" << endl;
+        gotoxy(40,6);cout << "---------------------------" << endl;
+        gotoxy(40,7);cout << "1. ALTA PROVEEDOR          " << endl;
+        gotoxy(40,8);cout << "2. BAJA PROVEEDOR          " << endl;
+        gotoxy(40,9);cout << "3. LISTAR PROVEDORES       " << endl;
+        gotoxy(40,10);cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
+        gotoxy(40,11);cout << "- SELECCIONE UNA OPCION: - " << endl;
+        gotoxy(40,12);cout << "---------------------------" << endl;
+        gotoxy(40,13);cin>>opc;
         system("cls");
         switch(opc)
         {
