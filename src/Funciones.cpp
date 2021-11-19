@@ -79,7 +79,7 @@ const char* buscarNombreCuentaContable(int cuentaCont)
     reg.leerDeDisco(pos);
 
 
-   cout<<" - "<<reg.getDescripcionCuenta()<<endl;
+    cout<<" - "<<reg.getDescripcionCuenta()<<endl;
 
 }
 int buscarPosMP(int medio)
@@ -171,7 +171,7 @@ char* buscarNombProv2(int idProveedor)
 
     reg.leerDeDisco(pos);
 
-   return reg.getRazonSocial();
+    return reg.getRazonSocial();
 
 }
 
@@ -185,7 +185,7 @@ void buscarNombProveedor(int idProveedor)
 
     reg.leerDeDisco(pos);
 
-   cout<<""<<reg.getRazonSocial()<<endl;
+    cout<<""<<reg.getRazonSocial()<<endl;
 
 
 }
@@ -201,9 +201,11 @@ void buscarFacturasProveedor(int idProveedor)
     {
         if ( idProveedor == reg.getIdProveedor())
         {
-          if(reg.getNumFac()!=0){
+            if(reg.getNumFac()!=0)
+            {
 
-                gotoxy(12,21+i);cout<<reg.getPV()<<"-"<< reg.getNumFac()<<"="<<reg.getImporteTotal();
+                gotoxy(12,21+i);
+                cout<<reg.getPV()<<"-"<< reg.getNumFac()<<"="<<reg.getImporteTotal();
                 cout<<endl;
             }
         }
@@ -334,13 +336,14 @@ void listarProveedores()
     while(reg.leerDeDisco(i))
     {
 
+
         reg.mostrar();
         cout << endl;
         i++;
+
+
     }
-
 }
-
 bool soloNumeros(const char *cadena)
 {
     int i=0;
@@ -399,34 +402,49 @@ void menuComprobante()
     while(true)
     {
         system("cls");
-        gotoxy(40,5);cout << "-----MENU COMPROBANTES-----" << endl;
-        gotoxy(40,6);cout << "---------------------------" << endl;
-        gotoxy(40,7);cout << "1. ALTA COMPROBANTE"         << endl;
-        gotoxy(40,8);cout << "2. BAJA COMPROBANTE"         << endl;
-        gotoxy(40,9);cout << "3. LISTAR COMPROBANTES"      << endl;
-        gotoxy(40,10);cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
-        gotoxy(40,11);cout << "- SELECCIONE UNA OPCION: - " << endl;
-        gotoxy(40,12);cout << "---------------------------" << endl;
-        gotoxy(40,13);cout<<" > ";cin>>opc;
+        gotoxy(40,5);
+        cout << "-----MENU COMPROBANTES-----" << endl;
+        gotoxy(40,6);
+        cout << "---------------------------" << endl;
+        gotoxy(40,7);
+        cout << "1. ALTA COMPROBANTE"         << endl;
+        gotoxy(40,8);
+        cout << "2. BAJA COMPROBANTE"         << endl;
+        gotoxy(40,9);
+        cout << "3. LISTAR COMPROBANTES"      << endl;
+        gotoxy(40,10);
+        cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
+        gotoxy(40,11);
+        cout << "- SELECCIONE UNA OPCION: - " << endl;
+        gotoxy(40,12);
+        cout << "---------------------------" << endl;
+        gotoxy(40,13);
+        cout<<" > ";
+        cin>>opc;
         system("cls");
         switch(opc)
         {
         case 1:
             int tipoComp;
-            gotoxy(40,5);cout << "Factura: 1  Nota de Crédito: 2"<< endl;
-            gotoxy(40,6);cout<<" > ";cin>>tipoComp;
+            gotoxy(40,5);
+            cout << "Factura: 1  Nota de Crédito: 2"<< endl;
+            gotoxy(40,6);
+            cout<<" > ";
+            cin>>tipoComp;
             system("cls");
             reg.cargar(tipoComp);
             if(reg.getEstado()==true)
             {
                 if(reg.guardarEnDisco()==true)
                 {
-                   gotoxy(4,41);cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
-                   resetColor();
+                    gotoxy(4,41);
+                    cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
+                    resetColor();
                 }
                 else
                 {
-                    gotoxy(4,41);cout<<"NO SE PUDO GRABAR EL REGISTRO"<<endl;
+                    gotoxy(4,41);
+                    cout<<"NO SE PUDO GRABAR EL REGISTRO"<<endl;
                     resetColor();
                 }
             }
@@ -434,7 +452,8 @@ void menuComprobante()
             {
                 cout<<"ERROR DE DATOS"<<endl;
             }
-            gotoxy(4,42);system("pause");
+            gotoxy(4,42);
+            system("pause");
             break;
         case 2:
         //BAJA COMPROBANTE;
@@ -460,15 +479,24 @@ void menuProveedor()
     while(true)
     {
         system("cls");
-        gotoxy(40,5);cout << "-----MENU PROVEEDOR--------" << endl;
-        gotoxy(40,6);cout << "---------------------------" << endl;
-        gotoxy(40,7);cout << "1. ALTA PROVEEDOR          " << endl;
-        gotoxy(40,8);cout << "2. BAJA PROVEEDOR          " << endl;
-        gotoxy(40,9);cout << "3. LISTAR PROVEDORES       " << endl;
-        gotoxy(40,10);cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
-        gotoxy(40,11);cout << "- SELECCIONE UNA OPCION: - " << endl;
-        gotoxy(40,12);cout << "---------------------------" << endl;
-        gotoxy(40,13);cin>>opc;
+        gotoxy(40,5);
+        cout << "-----MENU PROVEEDOR--------" << endl;
+        gotoxy(40,6);
+        cout << "---------------------------" << endl;
+        gotoxy(40,7);
+        cout << "1. ALTA PROVEEDOR          " << endl;
+        gotoxy(40,8);
+        cout << "2. BAJA PROVEEDOR          " << endl;
+        gotoxy(40,9);
+        cout << "3. LISTAR PROVEDORES       " << endl;
+        gotoxy(40,10);
+        cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
+        gotoxy(40,11);
+        cout << "- SELECCIONE UNA OPCION: - " << endl;
+        gotoxy(40,12);
+        cout << "---------------------------" << endl;
+        gotoxy(40,13);
+        cin>>opc;
         system("cls");
         switch(opc)
         {
@@ -493,6 +521,8 @@ void menuProveedor()
             break;
         case 2:
             bajaProveedor();
+            system("pause");
+            break;
         case 3:
             listarProveedores();
             system("pause");
@@ -570,35 +600,51 @@ void menuOP()
     while(true)
     {
         system("cls");
-        gotoxy(40,5);cout << "-----MENU ORDENES DE PAGO -----" << endl;
-        gotoxy(40,6);cout << "---------------------------" << endl;
-        gotoxy(40,7);cout << "1. ALTA "         << endl;
-        gotoxy(40,8);cout << "2. BAJA "         << endl;
-        gotoxy(40,9);cout << "3. LISTAR "      << endl;
-        gotoxy(40,10);cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
-        gotoxy(40,11);cout << "- SELECCIONE UNA OPCION: - " << endl;
-        gotoxy(40,12);cout << "---------------------------" << endl;
-        gotoxy(40,13);cout<<" > ";cin>>opc;
+        gotoxy(40,5);
+        cout << "-----MENU ORDENES DE PAGO -----" << endl;
+        gotoxy(40,6);
+        cout << "---------------------------" << endl;
+        gotoxy(40,7);
+        cout << "1. ALTA "         << endl;
+        gotoxy(40,8);
+        cout << "2. BAJA "         << endl;
+        gotoxy(40,9);
+        cout << "3. LISTAR "      << endl;
+        gotoxy(40,10);
+        cout << "0. VOLVER AL MENU PRINCIPAL" << endl;
+        gotoxy(40,11);
+        cout << "- SELECCIONE UNA OPCION: - " << endl;
+        gotoxy(40,12);
+        cout << "---------------------------" << endl;
+        gotoxy(40,13);
+        cout<<" > ";
+        cin>>opc;
         system("cls");
         switch(opc)
         {
         case 1:
             int tipoOP;
-            gotoxy(40,5);cout << "REALIZAR PAGOS "<< endl;
-            gotoxy(40,5);cout << "PAGOS VARIOS : 1  PAGO A PROVEEDOR: 2"<< endl;
-            gotoxy(40,6);cout<<" > ";cin>>tipoOP;
+            gotoxy(40,5);
+            cout << "REALIZAR PAGOS "<< endl;
+            gotoxy(40,5);
+            cout << "PAGOS VARIOS : 1  PAGO A PROVEEDOR: 2"<< endl;
+            gotoxy(40,6);
+            cout<<" > ";
+            cin>>tipoOP;
             system("cls");
             regis.cargar(tipoOP);
             if(regis.getEstadoOP()==true)
             {
                 if(regis.guardarEnDisco()==true)
                 {
-                   gotoxy(4,41);cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
-                   resetColor();
+                    gotoxy(4,41);
+                    cout<<"REGISTRO GRABADO EN EL ARCHIVO"<<endl;
+                    resetColor();
                 }
                 else
                 {
-                    gotoxy(4,41);cout<<"NO SE PUDO GRABAR EL REGISTRO"<<endl;
+                    gotoxy(4,41);
+                    cout<<"NO SE PUDO GRABAR EL REGISTRO"<<endl;
                     resetColor();
                 }
             }
@@ -606,12 +652,14 @@ void menuOP()
             {
                 cout<<"ERROR DE DATOS"<<endl;
             }
-            gotoxy(4,42);system("pause");
+            gotoxy(4,42);
+            system("pause");
             break;
         case 2:
-        //BAJA COMPROBANTE;
+            //BAJA COMPROBANTE;
             MediosDePagos obj;
-        case 3:obj.listarMediosDePagos();
+        case 3:
+            obj.listarMediosDePagos();
             system("pause");
             break;
         case 0:
@@ -627,54 +675,44 @@ void menuOP()
 
 void bajaProveedor()
 {
-    Proveedor reg;
+
     int i=0, idProv, opc;
     char *cpynombre;
-    FILE *p;
-    p = fopen("proveedores.dat", "rb+");
 
-    if(p == nullptr){
-        cout << "EL ARCHIVO NO SE ABRIO CORRECTAMENTE.";
-        return;
-
-    }
     cout << "------------- LISTA DE PROVEEDORES A DAR DE BAJA ---------------" << endl;
-    while(reg.leerDeDisco(i)){
-        if(reg.getEstadoProv() == true){
-            cout << "----------------" << endl;
-            reg.mostrar();
-            cout << "----------------" << endl;
-            i++;
-        }
-    }
+
+    listarProveedores();
 
     cout << "SELECCIONE EL CODIGO DEL PROVEEDOR QUE DESEE DAR DE BAJA: ";
 
     cin >> idProv;
 
-    while(idProv > contarProveedores()){
-        cout << "EL CODIGO DEL PROVEEDOR NO EXISTE." << endl;
-        cout << "POR FAVOR INGRESE OTRO CODIGO DE PROVEEDOR: ";
-        cin >> idProv;
+    //while(idProv > contarProveedores()){
+    //    cout << "EL CODIGO DEL PROVEEDOR NO EXISTE." << endl;
+    //    cout << "POR FAVOR INGRESE OTRO CODIGO DE PROVEEDOR: ";
+    //    cin >> idProv;
+    //}
+
+    char nom[45]= {};
+    strcpy(nom,buscarNombProv2(idProv));
+
+    cout << "EL PROVEEDOR " << nom << " SE ESTA POR DAR DE BAJA. ESTA SEGURO? ";
+    cout << " 1 / SI  --  2 / NO" << endl;
+    cin >> opc;
+    Proveedor reg2;
+    if(opc == 1)
+    {
+
+        int pos;
+        pos=buscarPosProveedor(idProv);
+        reg2.leerDeDisco(pos);
+        reg2.setEstadoProv(false);
+        reg2.guardarEnDisco(pos);
+
+        cout << "EL PROVEEDOR SE DIO DE BAJA" << endl;
+
+
     }
+    else return;
 
-    if(buscarProveedor(idProv) == true){
-        int tam=strlen(buscarNombProv2(idProv));
-        cpynombre=new char[tam+1];
-        strcpy(cpynombre,buscarNombProv2(idProv));
-
-        cout << "EL PROVEEDOR " << cpynombre << " SE ESTA POR DAR DE BAJA. ESTA SEGURO? ";
-        cout << " 1 / SI  --  2 / NO" << endl;
-        cin >> opc;
-            if(opc == 1){
-                fseek(p,sizeof(Proveedor)*idProv,0);
-                reg.setEstadoProv(false);
-                cout << "EL PROVEEDOR SE DIO DE BAJA" << endl;
-                system("pause");
-            }
-            else return;
-    }
-    delete cpynombre;
-
-    fclose(p);
 }
