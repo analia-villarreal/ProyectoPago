@@ -27,6 +27,7 @@ class Proveedor
         // solo voy a hacer comprobante y proveedor cargar una factura y cargar un proveedor... para la semana que viene..
     public:
         Proveedor();
+        Proveedor(int,const char*,int,int,const char*,const char*,bool,bool,int,bool);
         void setIdProveedor(int);
         void setRazonSocial(char*);
         void setCUIT(int);
@@ -51,6 +52,7 @@ class Proveedor
         void mostrar();
         bool guardarEnDisco();
         void guardarEnDisco(int);
+        bool guardarEnDiscoReset();
         bool leerDeDisco();
         bool leerDeDisco(int);
 

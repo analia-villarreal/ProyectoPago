@@ -1,6 +1,10 @@
 #ifndef FUNCIONES_H
 #define FUNCIONES_H
 
+using namespace std;
+
+#include <string>
+
 void marco_comprobante(int,int,int,int);
 
 void menuComprobante();
@@ -10,6 +14,8 @@ void menuProveedor();
 void menuOP();
 
 void menuPrincipal();
+
+void menuIngreso();
 
 void menuPlandeCuentas();
 
@@ -52,5 +58,13 @@ float buscarAlicuota(int);
 char* buscarNombProv2(int);
 
 int contarProveedores();
+
+int crearCodigoUsuario(const char *);
+
+void crearUsuario();
+
+void ingresarUsuario();
+
+void resetTablas();
 
 #endif // FUNCIONES_H

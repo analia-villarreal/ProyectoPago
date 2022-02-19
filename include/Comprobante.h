@@ -22,8 +22,10 @@ class Comprobante
         float _IVA;
         float _importeTotal;
         int  _estado;
+        char _usuarioLogueado[25];
     public:
         Comprobante();
+        Comprobante(int,const char*,Fecha,Fecha,int,int,int,int,int,int,float,float,float,int,const char*);
         void setIdComp(int);
         void setLetra(char*);
         void setFechaContabilizacion(Fecha);
@@ -39,7 +41,7 @@ class Comprobante
         void setImporteTotal(float);
         void setEstado(int);
         int getIdComp();
-        char * getLetra();
+        const char * getLetra();
         Fecha getFechaContabilizacion();
         Fecha getFechaFactura();
         int getTipo();
@@ -57,6 +59,7 @@ class Comprobante
         void mostrar();
         bool leerDeDisco(int);
         bool guardarEnDisco();
+        bool guardarEnDiscoReset();
         void guardarEnDisco(int);
         void listarComprobantes();
         void listarOrdenadoFechaConta();

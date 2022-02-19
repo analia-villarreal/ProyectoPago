@@ -17,7 +17,7 @@ class Fecha
         _mes=((int)aux_fec[3]-48)*10+((int)aux_fec[4]-48);
         _anio=((int)aux_fec[6]-48)*1000+((int)aux_fec[7]-48)*100+((int)aux_fec[8]-48)*10+((int)aux_fec[9]-48);
         if (_dia<0 || _dia>31){_dia=0; _mes=0; _anio=0;}
-        if (_mes<0 || _mes>12){_dia=0; _mes=0; _anio=0;}
+        if (mes<0 || mes>12){_dia=0; _mes=0; _anio=0;}
         if (_anio<0){_dia=0; _mes=0; _anio=0;}
         };
         void setDia(int d){if (d>0&&d<32)_dia=d;else{_dia=0;}}

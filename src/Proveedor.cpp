@@ -28,6 +28,19 @@ Proveedor::Proveedor()
     //ctor
 }
 
+Proveedor::Proveedor(int idPro,const char* razon,int cuit ,int jur,const char* nombJur,const char* categoria,bool retIIBB,bool retGanan,int iva,bool estado)
+{
+    _idProveedor=idPro;
+    strcpy(_razonSocial,razon);
+    _CUIT=cuit;
+    _juridiccion=jur;
+    strcpy(_nombJuridiccion,nombJur);
+    strcpy(_categoria,categoria);
+    _retIIBB=retIIBB;
+    _retGanancias=retGanan;
+    _IVA=iva;
+    _estadoProveedor=estado;
+}
 void Proveedor::setIdProveedor(int idProv)
 {
     _idProveedor=idProv;
@@ -161,10 +174,10 @@ bool Proveedor::cargar()
 void Proveedor::mostrar()
 {
     cout << left;
-    cout<< setw(8) <<_idProveedor;
-    cout<< setw(25) <<_razonSocial;
+    cout<< setw(6) <<_idProveedor;
+    cout<< setw(50) <<_razonSocial;
     cout<< setw(30) <<_categoria;
-    cout<< setw(36) <<_estadoProveedor;
+    cout<< setw(33) <<_estadoProveedor;
     cout<<endl;
 }
 bool Proveedor::guardarEnDisco()
@@ -180,6 +193,21 @@ bool Proveedor::guardarEnDisco()
     fclose(p);
     return guardo;
 }
+bool Proveedor::guardarEnDiscoReset()
+{
+    bool guardo;
+    FILE *p;
+    p = fopen("proveedores.dat", "wb");
+    if (p == NULL)
+    {
+        return false;
+    }
+    guardo = fwrite(this, sizeof(Proveedor), 1, p);
+    fclose(p);
+    return guardo;
+}
+
+
 
 void Proveedor::guardarEnDisco(int pos)
 {
@@ -195,6 +223,8 @@ void Proveedor::guardarEnDisco(int pos)
     fclose(p);
     return;
 }
+
+
 
 bool Proveedor::leerDeDisco(int pos)
 {

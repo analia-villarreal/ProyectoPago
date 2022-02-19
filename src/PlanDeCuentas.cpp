@@ -22,7 +22,18 @@
 using namespace std;
 using namespace rlutil;
 
+PlanDeCuentas::PlanDeCuentas(){
 
+}
+
+PlanDeCuentas::PlanDeCuentas(int codigo,const char* nombre,int tipo,bool estado){
+
+    _cuentaContable=codigo;
+    strcpy(_descripcionCuenta,nombre);
+    _tipoCuenta=tipo;
+    _estadoPlan=estado;
+
+}
 void PlanDeCuentas::setCuentaContable(int cuenta)
 {
     _cuentaContable=cuenta;
@@ -31,9 +42,14 @@ void PlanDeCuentas::setDescripcionCuenta(const char* descCuenta)
 {
     strcpy(_descripcionCuenta,descCuenta);
 }
-void PlanDeCuentas::setEstadoPlan(bool estado)
+void PlanDeCuentas::setTipoCuenta(int tipo)
 {
-    _estado=estado;
+    _tipoCuenta=tipo;
+}
+void PlanDeCuentas::setEstado(bool estado)
+{
+    _estadoPlan=estado;
+
 }
 int PlanDeCuentas::getCuentaContable()
 {
@@ -43,9 +59,13 @@ const char *PlanDeCuentas::getDescripcionCuenta()
 {
     return _descripcionCuenta;
 }
+int PlanDeCuentas::getTipoCuenta()
+{
+    return _tipoCuenta;
+}
 bool PlanDeCuentas::getEstadoPlan()
 {
-    return _estado;
+    return _estadoPlan;
 }
 void PlanDeCuentas::cargar()
 {
@@ -59,13 +79,16 @@ void PlanDeCuentas::cargar()
     cout<<"DESCRIPCION    "<<endl;
     cin>> desc;
     strcpy(_descripcionCuenta, desc);
-    setEstadoPlan(true);
+    setTipoCuenta(2);
+    setEstado(true);
 }
 void PlanDeCuentas::mostrar()
 {
     cout << left;
-    cout<< setw(16) << _cuentaContable;
-    cout<< setw(20) <<_descripcionCuenta;
+    cout<< setw(0) <<"  ";
+    cout<< setw(13) << _cuentaContable;
+    cout<< setw(33) <<_descripcionCuenta;
+    cout<< setw(4) <<_estadoPlan;
     cout<<endl;
 
 
@@ -75,6 +98,20 @@ bool PlanDeCuentas::guardarEnDisco()
     bool guardo;
     FILE *p;
     p = fopen("plandecuentas.dat", "ab");
+    if (p == NULL)
+    {
+        return false;
+    }
+    guardo = fwrite(this, sizeof(PlanDeCuentas), 1, p);
+    fclose(p);
+    return guardo;
+}
+
+bool PlanDeCuentas::guardarEnDiscoReset()
+{
+    bool guardo;
+    FILE *p;
+    p = fopen("plandecuentas.dat", "wb");
     if (p == NULL)
     {
         return false;
@@ -102,14 +139,17 @@ bool PlanDeCuentas::leerDeDisco(int pos)
 void PlanDeCuentas::listarPlanDeCuentas()
 {
 
-    gotoxy(85,5);cout<<"CODIGO CUENTA ";
-    gotoxy(100,5);cout<<"DESCRIPCION CUENTA ";
+
+    cout << left;
+    cout << setw(13)  << "CODIGO CUENTA";
+    cout << setw(30) << "DESCRIPCION CUENTA";
+    cout << setw(4) << "ESTADO"<<endl;
     cout<<endl;
     int pos=0;
     while(leerDeDisco(pos)==true)
     {
-        gotoxy(85,6+pos);cout<<_cuentaContable;
-        gotoxy(100,6+pos);cout<<_descripcionCuenta;
+
+        mostrar();
         pos++;
     }
     //cout<<endl;

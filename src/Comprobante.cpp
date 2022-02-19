@@ -18,10 +18,27 @@
 using namespace std;
 using namespace rlutil;
 
+Comprobante::Comprobante(){
 
+}
 
-Comprobante::Comprobante()
+Comprobante::Comprobante(int id, const char* letra, Fecha fechaConta, Fecha fechaComprobante, int tipo, int idProv, int pv, int numFac, int cuenta, int cant, float pu, float iva, float impTotal, int estado, const  char *userLog)
 {
+    _idComp=id;
+    strcpy(_letra,letra);
+    _fechaContabilizacion=fechaConta;
+    _fechaComp=fechaComprobante;
+    _tipo=tipo;
+    _idProveedor=idProv;
+    _pv=pv;
+    _numFac=numFac;
+    _cuentaContable=cuenta;
+    _cantidad=cant;
+    _PU=pu;
+    _IVA=iva;
+    _importeTotal=impTotal;
+    _estado=estado;
+    strcpy(_usuarioLogueado,userLog);
 
 }
 
@@ -94,7 +111,7 @@ int Comprobante::getIdComp()
 {
     return _idComp;
 }
-char * Comprobante::getLetra()
+const char * Comprobante::getLetra()
 {
     return _letra;
 }
@@ -330,6 +347,19 @@ bool Comprobante::guardarEnDisco()
     bool guardo;
     FILE *p;
     p = fopen("comprobantes.dat", "ab");
+    if (p == NULL)
+    {
+        return false;
+    }
+    guardo = fwrite(this, sizeof(Comprobante), 1, p);
+    fclose(p);
+    return guardo;
+}
+bool Comprobante::guardarEnDiscoReset()
+{
+    bool guardo;
+    FILE *p;
+    p = fopen("comprobantes.dat", "wb");
     if (p == NULL)
     {
         return false;
